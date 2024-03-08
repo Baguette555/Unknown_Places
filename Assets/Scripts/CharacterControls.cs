@@ -11,27 +11,39 @@ public class CharacterControls : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] SpriteRenderer sprite_renderer;
 
-    [Header("Jumping Script Properties")]
-    [SerializeField] float velocity = 10f;
+    [Header("isGrounded?! :( faut pas gronder")]
+    [SerializeField] bool EnSaut = false;
+    [SerializeField] GameObject SolDetection1;
+    [SerializeField] float jumpForce = 5f;
 
-    [Header("Scaling - Speed Movement - Animator")]
-    [SerializeField] float mouvement_speed = 0.03f;
+    [Header("[[OLD]] Jumping Script Properties")]
+    [SerializeField] float velocity = 5f;
+
+    [Header("Movement and speed")]
+    [SerializeField] float mouvement_speed = 5f;
     [SerializeField] bool canMove = true;
+    Vector2 move;
+
+
+    [Header("Health Points")]
+    [SerializeField] int health = 3;
 
     [Header("Dashing proprieties")]
     [SerializeField] bool canDash = true;
-    [SerializeField] bool isDashing;
+    public bool isDashing;
     [SerializeField] float dashSpeed = 15f;
     [SerializeField] float dashingTime = 0.4f;
     [SerializeField] float dashingCooldown = 1f;
     [SerializeField] float tm;
     private IEnumerator coroutine;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
 
     // Update is called once per frame
@@ -49,33 +61,58 @@ public class CharacterControls : MonoBehaviour
         {
             go_right();
         }
-        if (Input.GetKey(KeyCode.LeftShift) && canMove == true)
+        if (Input.GetKey(KeyCode.LeftShift) && canMove == true && canDash == true)
         {
             StartCoroutine(Dash());
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && EnSaut == false)
         {
-            rb.velocity = Vector2.up * velocity;
+            //rb.velocity = Vector2.up * velocity;
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+
+            EnSaut = true;
+
         }
     }
-
-    void go_left()
+    private void OnTriggerEnter2D(Collider2D SolDetection1)                 // ============== JUMP : GROUND DETECTION
     {
-        transform.Translate(-mouvement_speed, 0, 0, Space.World);       // Using the movement_speed to move right or left
+        EnSaut = false;
+        canDash = true;
+    }
+    private void ExitTriggerEnter2D(Collider2D SolDetection1)
+    {
+        EnSaut = true;
+    }                                                                       // =======================================
+
+    void go_left()                                                          // ============== MOVEMENT : LEFT & RIGHT
+    {
+        //transform.Translate(-mouvement_speed, 0, 0, Space.World);
+        //rb.velocity = new Vector2(-mouvement_speed, rb.velocity.y);
+        //rb.AddForce(Vector2.left * mouvement_speed);
+        //rb.velocity = new Vector2(move.x * mouvement_speed, rb.velocity.y);
+
+        transform.position += Vector3.left * mouvement_speed * Time.deltaTime;
         sprite_renderer.flipX = true;
 
     }
 
     void go_right()
     {
-        transform.Translate(mouvement_speed, 0, 0, Space.World);
-        sprite_renderer.flipX = false;
-    }
+        //transform.Translate(mouvement_speed, 0, 0, Space.World);
+        //rb.velocity = new Vector2(mouvement_speed, rb.velocity.y);
+        //rb.AddForce(Vector2.right * mouvement_speed);
 
-    IEnumerator Dash()
+        transform.position += Vector3.right * mouvement_speed * Time.deltaTime;
+        sprite_renderer.flipX = false;
+    }                                                                       // =======================================
+
+    IEnumerator Dash()                                                      // ============== DASHING : COROUTINE
     {
         canDash = false;
         isDashing = true;
+
+        Debug.Log(canDash);
+
         tm = Time.time;
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
@@ -93,6 +130,9 @@ public class CharacterControls : MonoBehaviour
         isDashing = false;
         rb.velocity = new Vector2(transform.localScale.x * 0, 0f);
         yield return new WaitForSeconds(dashingCooldown);
-        canDash = true;
-    }
+        if (EnSaut == false)
+        {
+            canDash = true;
+        }
+    }                                                                        // =======================================
 }
