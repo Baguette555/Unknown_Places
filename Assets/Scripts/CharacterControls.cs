@@ -110,9 +110,6 @@ public class CharacterControls : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
-
-        Debug.Log(canDash);
-
         tm = Time.time;
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
