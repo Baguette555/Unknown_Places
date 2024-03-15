@@ -16,7 +16,7 @@ public class HealthManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O) && playerHealth >= 0)
+        if (Input.GetKeyDown(KeyCode.O) && playerHealth > 0)
         {
             playerHealth -= 1;
         }
@@ -44,6 +44,11 @@ public class HealthManager : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        playerHealth -= damage;
+        if (playerHealth > 0)
+        {
+            playerHealth -= damage;
+            Debug.Log("HPS :");
+            Debug.Log(playerHealth);
+        }
     }
 }

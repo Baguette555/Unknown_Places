@@ -24,10 +24,6 @@ public class CharacterControls : MonoBehaviour
     [SerializeField] bool canMove = true;
     Vector2 move;
 
-
-    [Header("Health Points")]
-    [SerializeField] int health = 3;
-
     [Header("Dashing proprieties")]
     [SerializeField] bool canDash = true;
     public bool isDashing;
@@ -98,10 +94,6 @@ public class CharacterControls : MonoBehaviour
 
     void go_right()
     {
-        //transform.Translate(mouvement_speed, 0, 0, Space.World);
-        //rb.velocity = new Vector2(mouvement_speed, rb.velocity.y);
-        //rb.AddForce(Vector2.right * mouvement_speed);
-
         transform.position += Vector3.right * mouvement_speed * Time.deltaTime;
         sprite_renderer.flipX = false;
     }                                                                       // =======================================
