@@ -749,9 +749,9 @@ GameObject:
   - component: {fileID: 98425952}
   - component: {fileID: 98425954}
   - component: {fileID: 98425953}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Mur (2) #
-  m_TagString: Sol
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -880,9 +880,9 @@ GameObject:
   - component: {fileID: 118818845}
   - component: {fileID: 118818847}
   - component: {fileID: 118818846}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (2) #
-  m_TagString: Sol
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1089,9 +1089,9 @@ GameObject:
   - component: {fileID: 127016777}
   - component: {fileID: 127016776}
   - component: {fileID: 127016775}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Echaffau test (1) #
-  m_TagString: Sol
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1414,8 +1414,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67476a00ff215a4d96615b2630f921b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newControls: {fileID: 388092519}
-  specialWallCollider: {fileID: 1921591090}
+  characterControls: {fileID: 388092516}
+  specialWallCollider: {fileID: 0}
 --- !u!61 &241140547
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1461,6 +1461,137 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &272022243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 272022244}
+  - component: {fileID: 272022246}
+  - component: {fileID: 272022245}
+  m_Layer: 0
+  m_Name: redSquareYupYup (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &272022244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272022243}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.051, y: 32.13, z: 0}
+  m_LocalScale: {x: 0.48861092, y: 0.8434401, z: 2.8101556}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 752952284}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &272022245
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272022243}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &272022246
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272022243}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
+    type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &302055548
 GameObject:
   m_ObjectHideFlags: 0
@@ -1558,9 +1689,9 @@ GameObject:
   - component: {fileID: 306333868}
   - component: {fileID: 306333870}
   - component: {fileID: 306333869}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (3) # (2)
-  m_TagString: Sol
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1986,9 +2117,9 @@ GameObject:
   - component: {fileID: 337579169}
   - component: {fileID: 337579171}
   - component: {fileID: 337579170}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (3) #
-  m_TagString: Sol
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116305,8 +116436,7 @@ GameObject:
   - component: {fileID: 388092515}
   - component: {fileID: 388092514}
   - component: {fileID: 388092513}
-  - component: {fileID: 388092517}
-  - component: {fileID: 388092519}
+  - component: {fileID: 388092516}
   m_Layer: 0
   m_Name: '### Player ###'
   m_TagString: Player
@@ -116323,7 +116453,7 @@ Transform:
   m_GameObject: {fileID: 388092511}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -0.52999973}
+  m_LocalPosition: {x: 99.9, y: 4.7, z: -0.52999973}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -116455,7 +116585,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &388092517
+--- !u!114 &388092516
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116464,87 +116594,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 388092511}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 8d57961b68ad67244ba7c0bbcd9f35ed,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 388092519}
-        m_TargetAssemblyTypeName: NewControls, Assembly-CSharp
-        m_MethodName: Jump
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 315a3eed-97ae-4da3-b398-6438db9c660e
-    m_ActionName: Player/Jump[/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 388092519}
-        m_TargetAssemblyTypeName: NewControls, Assembly-CSharp
-        m_MethodName: Move
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 388ca393-3476-474f-921c-de3edf2ecc73
-    m_ActionName: Player/Move
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 4dab794d-657f-4458-9c27-6fd9da113020
-    m_ActionName: UI (Debug)/GainHealth[/Keyboard/i]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 20399d77-ac96-4c30-ba94-9aa3f12f478b
-    m_ActionName: UI (Debug)/LoseHealth[/Keyboard/o]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!114 &388092519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388092511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 805f30b563f8cee4883f8a4c03508f3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a5960cd5c542b248a7cefdf1cc909b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 388092513}
   sprite_renderer: {fileID: 388092515}
-  groundCheck: {fileID: 121755015}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
   EnSaut: 0
+  SolDetection1: {fileID: 121755014}
+  jumpForce: 8
+  velocity: 1
+  mouvement_speed: 10
   canMove: 1
   canDash: 1
   isDashing: 0
@@ -116697,9 +116756,9 @@ GameObject:
   - component: {fileID: 472667321}
   - component: {fileID: 472667322}
   - component: {fileID: 472667323}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Echaffau test
-  m_TagString: Sol
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117407,9 +117466,9 @@ GameObject:
   - component: {fileID: 667245751}
   - component: {fileID: 667245753}
   - component: {fileID: 667245752}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (3) # (6)
-  m_TagString: Sol
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117558,6 +117617,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 987201154}
+  - {fileID: 958096639}
+  - {fileID: 1650673702}
+  - {fileID: 272022244}
   m_Father: {fileID: 1509741679}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.214}
 --- !u!114 &752952285
@@ -117743,9 +117805,9 @@ GameObject:
   - component: {fileID: 786405426}
   - component: {fileID: 786405428}
   - component: {fileID: 786405427}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (3) # (7)
-  m_TagString: Sol
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117873,9 +117935,9 @@ GameObject:
   - component: {fileID: 814166687}
   - component: {fileID: 814166689}
   - component: {fileID: 814166688}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (3) # (5)
-  m_TagString: Sol
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118086,8 +118148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67476a00ff215a4d96615b2630f921b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newControls: {fileID: 388092519}
-  specialWallCollider: {fileID: 1921591090}
+  characterControls: {fileID: 388092516}
+  specialWallCollider: {fileID: 0}
 --- !u!61 &837153275
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -118190,9 +118252,9 @@ GameObject:
   - component: {fileID: 932732612}
   - component: {fileID: 932732614}
   - component: {fileID: 932732613}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (3) # (1)
-  m_TagString: Sol
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118300,6 +118362,137 @@ SpriteRenderer:
   m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: 7b532fd1ab36296479a431c1afdc966d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &958096638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 958096639}
+  - component: {fileID: 958096641}
+  - component: {fileID: 958096640}
+  m_Layer: 0
+  m_Name: redSquareYupYup (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &958096639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958096638}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.347, y: 9.92, z: 0}
+  m_LocalScale: {x: 0.96330136, y: 0.8434401, z: 2.8101556}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 752952284}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &958096640
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958096638}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &958096641
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958096638}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
+    type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -118691,8 +118884,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67476a00ff215a4d96615b2630f921b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newControls: {fileID: 388092519}
-  specialWallCollider: {fileID: 1921591090}
+  characterControls: {fileID: 388092516}
+  specialWallCollider: {fileID: 0}
 --- !u!61 &1078793815
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -119051,9 +119244,9 @@ GameObject:
   - component: {fileID: 1313972937}
   - component: {fileID: 1313972939}
   - component: {fileID: 1313972940}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: FallingPlatform
-  m_TagString: Sol
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119256,9 +119449,9 @@ GameObject:
   - component: {fileID: 1419387450}
   - component: {fileID: 1419387452}
   - component: {fileID: 1419387451}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: sol
-  m_TagString: Sol
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119387,9 +119580,9 @@ GameObject:
   - component: {fileID: 1454351418}
   - component: {fileID: 1454351420}
   - component: {fileID: 1454351419}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (3) # (8)
-  m_TagString: Sol
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119628,7 +119821,6 @@ GameObject:
   - component: {fileID: 1511302347}
   - component: {fileID: 1511302348}
   - component: {fileID: 1511302349}
-  - component: {fileID: 1511302350}
   m_Layer: 0
   m_Name: gaugeHP_manager
   m_TagString: Untagged
@@ -119725,77 +119917,6 @@ MonoBehaviour:
   hearts1: {fileID: 21300000, guid: ccfb7507330d8c44ba54d0210080c375, type: 3}
   hearts2: {fileID: 21300000, guid: 2a285fa2a3b837d48925c0042850638e, type: 3}
   hearts3: {fileID: 21300000, guid: 40486641fb491994c9ced3e701f129af, type: 3}
---- !u!114 &1511302350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511302346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 8d57961b68ad67244ba7c0bbcd9f35ed,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 315a3eed-97ae-4da3-b398-6438db9c660e
-    m_ActionName: Player/Jump[/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 388ca393-3476-474f-921c-de3edf2ecc73
-    m_ActionName: Player/Move[/Keyboard/d,/Keyboard/a]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1511302349}
-        m_TargetAssemblyTypeName: HealthManager, Assembly-CSharp
-        m_MethodName: GainHealth
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 4dab794d-657f-4458-9c27-6fd9da113020
-    m_ActionName: UI (Debug)/GainHealth[/Keyboard/i]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1511302349}
-        m_TargetAssemblyTypeName: HealthManager, Assembly-CSharp
-        m_MethodName: LoseHealth
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 20399d77-ac96-4c30-ba94-9aa3f12f478b
-    m_ActionName: UI (Debug)/LoseHealth[/Keyboard/o]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: UI (Debug)
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &1588780054
 GameObject:
   m_ObjectHideFlags: 0
@@ -119960,6 +120081,137 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1650673701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1650673702}
+  - component: {fileID: 1650673704}
+  - component: {fileID: 1650673703}
+  m_Layer: 0
+  m_Name: redSquareYupYup (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1650673702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650673701}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.058, y: 32.13, z: 0}
+  m_LocalScale: {x: 0.34288487, y: 0.8434401, z: 2.8101556}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 752952284}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1650673703
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650673701}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &1650673704
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650673701}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
+    type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1675854056
 GameObject:
   m_ObjectHideFlags: 0
@@ -120050,8 +120302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67476a00ff215a4d96615b2630f921b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newControls: {fileID: 388092519}
-  specialWallCollider: {fileID: 1921591090}
+  characterControls: {fileID: 388092516}
+  specialWallCollider: {fileID: 0}
 --- !u!1 &1715403473
 GameObject:
   m_ObjectHideFlags: 0
@@ -120149,9 +120401,9 @@ GameObject:
   - component: {fileID: 1717053356}
   - component: {fileID: 1717053358}
   - component: {fileID: 1717053357}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (1)
-  m_TagString: Sol
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120279,9 +120531,9 @@ GameObject:
   - component: {fileID: 1802041709}
   - component: {fileID: 1802041711}
   - component: {fileID: 1802041710}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (3) # (3)
-  m_TagString: Sol
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120409,9 +120661,9 @@ GameObject:
   - component: {fileID: 1846698776}
   - component: {fileID: 1846698778}
   - component: {fileID: 1846698777}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Mur (1)
-  m_TagString: Sol
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120614,7 +120866,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1895302217}
   - component: {fileID: 1895302218}
-  - component: {fileID: 1895302219}
   m_Layer: 0
   m_Name: ChangeZone
   m_TagString: ChangeZone
@@ -120682,18 +120933,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 10}
   m_EdgeRadius: 0
---- !u!114 &1895302219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1895302216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38c6b57e3ce4c0a428debbe610360d93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1898470505
 GameObject:
   m_ObjectHideFlags: 0
@@ -120821,8 +121060,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67476a00ff215a4d96615b2630f921b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newControls: {fileID: 388092519}
-  specialWallCollider: {fileID: 1921591090}
+  characterControls: {fileID: 388092516}
+  specialWallCollider: {fileID: 0}
 --- !u!61 &1921591093
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -121052,8 +121291,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67476a00ff215a4d96615b2630f921b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newControls: {fileID: 388092519}
-  specialWallCollider: {fileID: 1921591090}
+  characterControls: {fileID: 388092516}
+  specialWallCollider: {fileID: 0}
 --- !u!61 &1976982909
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -121448,9 +121687,9 @@ GameObject:
   - component: {fileID: 2120630515}
   - component: {fileID: 2120630517}
   - component: {fileID: 2120630516}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square (3) # (4)
-  m_TagString: Sol
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

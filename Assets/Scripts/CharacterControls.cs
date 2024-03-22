@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 public class CharacterControls : MonoBehaviour
@@ -49,7 +50,7 @@ public class CharacterControls : MonoBehaviour
         {
             return;
         }
-        if (Input.GetKey(KeyCode.LeftArrow) && canMove == true)
+        /*if (Input.GetKey(KeyCode.LeftArrow) && canMove == true)
         {
             go_left();
         }
@@ -68,7 +69,7 @@ public class CharacterControls : MonoBehaviour
 
             EnSaut = true;
 
-        }
+        }*/
     }
     private void OnTriggerEnter2D(Collider2D SolDetection1)                 // ============== JUMP : GROUND DETECTION
     {
@@ -79,6 +80,29 @@ public class CharacterControls : MonoBehaviour
     {
         EnSaut = true;
     }                                                                       // =======================================
+
+    public void Jump(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+
+        if(context.canceled && rb.velocity.y > 0f)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+        }
+    }
+
+    public void Move(InputAction.CallbackContext context)
+    {
+        go_right();
+    }
+
+    public void Dash(InputAction.CallbackContext context) 
+    {
+        StartCoroutine(Dash());
+    }
 
     void go_left()                                                          // ============== MOVEMENT : LEFT & RIGHT
     {
@@ -96,7 +120,7 @@ public class CharacterControls : MonoBehaviour
     {
         transform.position += Vector3.right * mouvement_speed * Time.deltaTime;
         sprite_renderer.flipX = false;
-    }                                                                       // =======================================
+    }                                                                     // =======================================
 
     IEnumerator Dash()                                                      // ============== DASHING : COROUTINE
     {

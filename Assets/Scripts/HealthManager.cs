@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class HealthManager : MonoBehaviour
 {
@@ -14,16 +15,37 @@ public class HealthManager : MonoBehaviour
     [SerializeField] Sprite hearts2;
     [SerializeField] Sprite hearts3;
 
-    void Update()
+
+    private void Awake()
     {
-        if (Input.GetKeyDown(KeyCode.O) && playerHealth > 0)
+        Debug.Log("Awake:" + SceneManager.GetActiveScene().name);
+    }
+
+    public void GainHealth(InputAction.CallbackContext context)
+    {
+        if (context.performed && playerHealth < 3)
+        {
+            playerHealth += 1;
+        }
+    }
+    public void LoseHealth(InputAction.CallbackContext context)
+    {
+        if (context.performed && playerHealth > 0)
+        {
+            playerHealth -= 1;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        /*if (Input.GetKeyDown(KeyCode.O) && playerHealth > 0)
         {
             playerHealth -= 1;
         }
         if (Input.GetKeyDown(KeyCode.I) && playerHealth < 3)
         {
             playerHealth += 1;
-        }
+        }*/
         if (playerHealth == 3)
         {
             healthImage.sprite = hearts3;
@@ -39,6 +61,7 @@ public class HealthManager : MonoBehaviour
         if (playerHealth <= 0)
         {
             healthImage.sprite = hearts0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
@@ -47,8 +70,7 @@ public class HealthManager : MonoBehaviour
         if (playerHealth > 0)
         {
             playerHealth -= damage;
-            Debug.Log("HPS :");
-            Debug.Log(playerHealth);
+            Debug.Log("HPs :" + playerHealth);
         }
     }
 }

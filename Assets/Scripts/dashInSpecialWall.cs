@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class dashInSpecialWall : MonoBehaviour
 {
-    public CharacterControls characterControls;
+    public NewControls newControls;
     [SerializeField] GameObject specialWallCollider;
 
     // Start is called before the first frame update
@@ -16,7 +16,7 @@ public class dashInSpecialWall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (characterControls.isDashing == true && (gameObject.tag == "SpecialWall"))
+        if (newControls.isDashing == true && (gameObject.tag == "SpecialWall"))
         {
             GetComponent<Collider2D>().enabled = false;
         }
