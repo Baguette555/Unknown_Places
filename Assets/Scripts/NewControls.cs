@@ -50,14 +50,11 @@ public class NewControls : MonoBehaviour
         {
             Flip();
         }
-        else if (isDashing)
-        {
-            return;
-        }
-        if (Input.GetKey(KeyCode.LeftShift) && canDash == true)
+
+        /*if (Input.GetKey(KeyCode.LeftShift) && canDash == true)
         {
             StartCoroutine(Dash());
-        }
+        }*/
     }
     private void FixedUpdate()
     {
@@ -77,12 +74,20 @@ public class NewControls : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
     }
+    public void Dash(InputAction.CallbackContext context)
+    {
+        if (context.performed && canDash == true && isDashing == false)
+        {
+            StartCoroutine(Dash());
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D SolDetection1)                 // ============== JUMP : GROUND DETECTION
     {
         EnSaut = false;
         canDash = true;
     }
-    private void ExitTriggerEnter2D(Collider2D SolDetection1)
+    private void OnTriggerExit2D(Collider2D SolDetection1)
     {
         EnSaut = true;
     }
@@ -117,14 +122,17 @@ public class NewControls : MonoBehaviour
         tm = Time.time;
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
-        if (sprite_renderer.flipX == true)
-        {
-            rb.velocity = Vector2.left * dashSpeed;
-        }
-        else
+
+        rb.velocity = Vector2.right * dashSpeed;    // Même ici, le personnage est figé
+
+        /*if (isFacingRight)                // Là est le soucis : le personnage reste dans les airs et ne bouge pas
         {
             rb.velocity = Vector2.right * dashSpeed;
         }
+        else if (!isFacingRight)
+        {
+            rb.velocity = Vector2.left * dashSpeed;
+        }*/
 
         yield return new WaitForSeconds(dashingTime);
         rb.gravityScale = originalGravity;

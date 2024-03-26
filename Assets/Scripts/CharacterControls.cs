@@ -15,7 +15,7 @@ public class CharacterControls : MonoBehaviour
     [Header("isGrounded?! :( faut pas gronder")]
     [SerializeField] bool EnSaut = false;
     [SerializeField] GameObject SolDetection1;
-    [SerializeField] float jumpForce = 5f;
+    [SerializeField] float jumpForce = 3f;
 
     [Header("[[OLD]] Jumping Script Properties")]
     [SerializeField] float velocity = 5f;
@@ -46,10 +46,6 @@ public class CharacterControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isDashing)
-        {
-            return;
-        }
         /*if (Input.GetKey(KeyCode.LeftArrow) && canMove == true)
         {
             go_left();
@@ -76,10 +72,12 @@ public class CharacterControls : MonoBehaviour
         EnSaut = false;
         canDash = true;
     }
-    private void ExitTriggerEnter2D(Collider2D SolDetection1)
+    private void OnTriggerExit2D(Collider2D SolDetection1)
     {
         EnSaut = true;
     }                                                                       // =======================================
+
+
 
     public void Jump(InputAction.CallbackContext context)
     {
@@ -99,10 +97,14 @@ public class CharacterControls : MonoBehaviour
         go_right();
     }
 
-    public void Dash(InputAction.CallbackContext context) 
+    public void Dash(InputAction.CallbackContext context)
     {
-        StartCoroutine(Dash());
+        if (context.performed)
+        {
+            StartCoroutine(Dash());
+        }
     }
+
 
     void go_left()                                                          // ============== MOVEMENT : LEFT & RIGHT
     {

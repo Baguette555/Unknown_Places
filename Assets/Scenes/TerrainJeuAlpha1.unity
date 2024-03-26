@@ -1025,7 +1025,7 @@ Transform:
   m_GameObject: {fileID: 121755014}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.42, z: 0}
+  m_LocalPosition: {x: 0, y: -2.457, z: 0}
   m_LocalScale: {x: 0.19048883, y: 0.35259283, z: 0.89393}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -116521,6 +116521,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 20399d77-ac96-4c30-ba94-9aa3f12f478b
     m_ActionName: UI (Debug)/LoseHealth[/Keyboard/o]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 388092519}
+        m_TargetAssemblyTypeName: NewControls, Assembly-CSharp
+        m_MethodName: Dash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4a4df899-81b1-4c9c-a6aa-ec64b6193333
+    m_ActionName: Player/Dash[/Keyboard/shift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -118942,6 +118958,7 @@ GameObject:
   - component: {fileID: 1270230431}
   - component: {fileID: 1270230433}
   - component: {fileID: 1270230432}
+  - component: {fileID: 1270230434}
   m_Layer: 0
   m_Name: doorHP_manager
   m_TagString: Untagged
@@ -118983,9 +119000,9 @@ MonoBehaviour:
   playerHealth: 3
   healthImage: {fileID: 1894349270}
   hearts0: {fileID: 21300000, guid: 03018e2e13cf6894fb2109cdd437c5c9, type: 3}
-  hearts1: {fileID: 21300000, guid: fa677d3dda2963b48b7657125d41d25e, type: 3}
-  hearts2: {fileID: 21300000, guid: 6de2560429ce12b4788872a40f268c5d, type: 3}
-  hearts3: {fileID: 21300000, guid: c1316690c79845b4da5f20acb5a952d0, type: 3}
+  hearts1: {fileID: 21300000, guid: 7915895f225b04147b6730ebcd18c56e, type: 3}
+  hearts2: {fileID: 21300000, guid: a975550c3b5044f4b8f63f942589acd8, type: 3}
+  hearts3: {fileID: 21300000, guid: 5010c4d5ae1f71f41965e0270539bbca, type: 3}
 --- !u!212 &1270230433
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -119038,6 +119055,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1270230434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270230430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 8d57961b68ad67244ba7c0bbcd9f35ed,
+    type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: UI (Debug)
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1313972934
 GameObject:
   m_ObjectHideFlags: 0
@@ -119722,9 +119770,9 @@ MonoBehaviour:
   playerHealth: 3
   healthImage: {fileID: 999952121}
   hearts0: {fileID: 21300000, guid: 03018e2e13cf6894fb2109cdd437c5c9, type: 3}
-  hearts1: {fileID: 21300000, guid: ccfb7507330d8c44ba54d0210080c375, type: 3}
-  hearts2: {fileID: 21300000, guid: 2a285fa2a3b837d48925c0042850638e, type: 3}
-  hearts3: {fileID: 21300000, guid: 40486641fb491994c9ced3e701f129af, type: 3}
+  hearts1: {fileID: 21300000, guid: e78a52b41575ae0478c192bf7902d930, type: 3}
+  hearts2: {fileID: 21300000, guid: ccea3428dec7cf24aa7a0f2515383664, type: 3}
+  hearts3: {fileID: 21300000, guid: c9df32cda429fd943b9fc05a0cc77a4b, type: 3}
 --- !u!114 &1511302350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119791,6 +119839,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 20399d77-ac96-4c30-ba94-9aa3f12f478b
     m_ActionName: UI (Debug)/LoseHealth[/Keyboard/o]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4a4df899-81b1-4c9c-a6aa-ec64b6193333
+    m_ActionName: Player/Dash[/Keyboard/shift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: UI (Debug)
@@ -121133,7 +121185,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -652, y: -340}
+  m_AnchoredPosition: {x: -652, y: -292}
   m_SizeDelta: {x: 565.207, y: 103.359}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2052937448
@@ -121156,8 +121208,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Commandes :\n- I pour Heal +1\n- O pour infliger -1\n- L. Shift pour dash\n-
-    Deplacement avec \u2190\u2191\u2192"
+  m_text: 'Commandes :
+
+    - I pour Heal +1
+
+    - O pour infliger -1
+
+    - L.
+    Shift pour dash
+
+    - ESPACE pour sauter
+
+    - Deplacement avec Q et D'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a3addf84bea5cd048abc7a9d4b79c045, type: 2}
   m_sharedMaterial: {fileID: 216533755427258559, guid: a3addf84bea5cd048abc7a9d4b79c045,
