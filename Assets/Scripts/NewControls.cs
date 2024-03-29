@@ -30,7 +30,6 @@ public class NewControls : MonoBehaviour
     [SerializeField] float dashSpeed = 20f;
     [SerializeField] float dashingTime = 0.4f;
     [SerializeField] float dashingCooldown = 1f;
-    [SerializeField] float tm;
     private IEnumerator coroutine;
 
     void Start()
@@ -119,7 +118,6 @@ public class NewControls : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
-        tm = Time.time;
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
 
