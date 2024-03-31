@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using UnityEngine.Events;
 
 public class NewControls : MonoBehaviour
 {
@@ -20,78 +21,56 @@ public class NewControls : MonoBehaviour
     private float speed = 8f;
     private float jumpForce = 10f;
     private bool isFacingRight = true;
-    [SerializeField] bool EnSaut = false;
-    [SerializeField] bool canMove = true;
-    Vector2 move;
+    private Vector2 move;
 
     [Header("Dashing proprieties")]
     [SerializeField] bool canDash = true;
     public bool isDashing;
-    [SerializeField] float dashSpeed = 20f;
+    [SerializeField] float dashSpeed = 30f;
     [SerializeField] float dashingTime = 0.4f;
     [SerializeField] float dashingCooldown = 1f;
+    [SerializeField] float dashGravity = 0f;
+    private float waitTime;
+    private float normalGravity;
     private IEnumerator coroutine;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         sprite_renderer = GetComponent<SpriteRenderer>();
         move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+    }
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        normalGravity = rb.gravityScale;
+        isFacingRight = true;
     }
 
     void Update()
     {
-        if (isFacingRight && horizontal > 0.01f)
-        {
-            Flip();
-        }
-        else if (!isFacingRight && horizontal < 0.01f)
-        {
-            Flip();
-        }
-
-        /*if (Input.GetKey(KeyCode.LeftShift) && canDash == true)
-        {
-            StartCoroutine(Dash());
-        }*/
-    }
-    private void FixedUpdate()
-    {
+        waitTime = Time.deltaTime;
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-    }
-
-    public void Jump(InputAction.CallbackContext context)
-    {
-        if (context.performed && EnSaut == false)
+        if(isDashing)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            EnSaut = true;
+            return;
         }
-
-        if (context.canceled && rb.velocity.y > 0f)
+        if (!isFacingRight && horizontal > 0f)
         {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            Flip();
         }
-    }
-    public void Dash(InputAction.CallbackContext context)
-    {
-        if (context.performed && canDash == true && isDashing == false)
+        else if (isFacingRight && horizontal < 0f)
         {
-            StartCoroutine(Dash());
+            Flip();
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D SolDetection1)                 // ============== JUMP : GROUND DETECTION
+    private bool IsGrounded()                                               // ============== JUMP : GROUND DETECTION [NEW]
     {
-        EnSaut = false;
         canDash = true;
-    }
-    private void OnTriggerExit2D(Collider2D SolDetection1)
-    {
-        EnSaut = true;
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
-    private void Flip()
+    private void Flip()                                                      // ============== FLIP [NEW]
     {
         isFacingRight = !isFacingRight;
         Vector3 localScale = transform.localScale;
@@ -101,45 +80,84 @@ public class NewControls : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
-        if (isFacingRight)
-        {
-            transform.position += Vector3.right * speed * Time.deltaTime;
-            sprite_renderer.flipX = true;
-        }
-        else if (!isFacingRight)
-        {
-            transform.position += Vector3.left * speed * Time.deltaTime;
-            sprite_renderer.flipX = false;
-        }
         horizontal = context.ReadValue<Vector2>().x;
     }
+
+    public void Jump(InputAction.CallbackContext context)                   // ============== JUMP [NEW]
+    {
+        if (context.performed && IsGrounded())
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+
+        if (context.canceled && rb.velocity.y > 0f)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+        }
+    }
+
+
+    public void Dash(InputAction.CallbackContext context)                  // ============== NEW DASHING SYSTEM (NOT WORKING IDK WHY)
+    {
+        if (context.performed && canDash == true && isDashing == false)
+        {
+            StartCoroutine(Dash());
+            /*if(waitTime >= dashingCooldown)
+            {
+                waitTime = 0f;
+                Invoke("Dashing", 0);
+            }*/
+        }
+    }
+    /*public void Dash() 
+    {
+        canDash = false;
+        isDashing = true;
+        rb.gravityScale = dashGravity;
+
+        if (move.x == 0)
+        {
+            if (isFacingRight)
+            {
+                rb.velocity = new Vector2(transform.localScale.x * dashSpeed, 0);
+            }
+            if (!isFacingRight)
+            {
+                rb.velocity = new Vector2(-transform.localScale.x * dashSpeed, 0);
+            }
+        }
+        else
+        {
+            rb.velocity = new Vector2(move.x * dashSpeed, 0);
+        }
+        Invoke("StopDash", dashingTime);
+    }
+    public void StopDash()
+    {
+        canDash = true;
+        isDashing = false;
+        rb.gravityScale = normalGravity;
+    }*/
 
     IEnumerator Dash()                                                      // ============== DASHING : COROUTINE
     {
         canDash = false;
         isDashing = true;
-        float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
-
-        rb.velocity = Vector2.right * dashSpeed;    // Même ici, le personnage est figé
-
-        /*if (isFacingRight)                // Là est le soucis : le personnage reste dans les airs et ne bouge pas
+        if (isFacingRight)
         {
-            rb.velocity = Vector2.right * dashSpeed;
+            rb.velocity = new Vector2(transform.localScale.x * dashSpeed, 0);
         }
-        else if (!isFacingRight)
+        if (!isFacingRight)
         {
-            rb.velocity = Vector2.left * dashSpeed;
-        }*/
+            rb.velocity = new Vector2(-transform.localScale.x * dashSpeed, 0);
+        }
 
         yield return new WaitForSeconds(dashingTime);
-        rb.gravityScale = originalGravity;
+        rb.gravityScale = normalGravity;
         isDashing = false;
         rb.velocity = new Vector2(transform.localScale.x * 0, 0f);
         yield return new WaitForSeconds(dashingCooldown);
-        if (EnSaut == false)
-        {
-            canDash = true;
-        }
+        canDash = true;
     }
 }

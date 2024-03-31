@@ -4,32 +4,97 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
+using System.Threading;
+using UnityEngine.Rendering.UI;
 
 public class dashCooldownImage : MonoBehaviour
 {
-    [SerializeField] TMPro.TextMeshProUGUI text;
+    [SerializeField] TMP_Text text;
     [SerializeField] Image image;
-    [SerializeField] float speed = 100f;
+    [SerializeField] float speed;
+
     float currentValue;
+
+    private void Awake()
+    {
+        image.color = new Color(0, 255, 0, 0f);
+        text.color = new Color(255, 255, 255, 0f);
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            StartCoroutine(Cooldown());
+        }
+    }
+    IEnumerator Cooldown()
+    {
+        yield return new WaitForSeconds(0.4f);  // Dashing Time
+
+        currentValue = 0;
+        text.color = new Color(255, 255, 255, 1f);
+        image.color = new Color(0, 255, 0, 1f);
+
+        while (currentValue < 100) 
+        {
+            currentValue += speed * Time.deltaTime / 1f;
+            text.text = ((int)currentValue).ToString() + "%";
+            image.fillAmount = currentValue / 100;
+            yield return null;
+        }
+        text.text = "PRET";
+        yield return new WaitForSeconds(0.175f);
+        currentValue = 0;
+        image.color = new Color(0, 255, 0, 0f);
+        text.color = new Color(255, 255, 255, 0f);
+
+        /*if (currentValue < 100)
+        {
+            text.color = new Color(255, 255, 255, 1f);
+            image.color = new Color(0, 255, 0, 1f);
+            currentValue += speed * Time.deltaTime;
+            text.text = ((int)currentValue).ToString() + "%";
+        }
+        else
+        {
+            text.text = "PRET !";
+            currentValue = 0;
+            yield return new WaitForSeconds(0.3f);
+            image.color = new Color(0, 255, 0, 0f);
+            text.color = new Color(255, 255, 255, 0f);
+
+        }
+        image.fillAmount = currentValue / 100;*/
+    }
+
+
+
+
+
+    /*[SerializeField] private float indicatorTimer = 1f;
+    [SerializeField] private float maxIndcatorTimer = 1f;
+
+    [SerializeField] private Image radialIndcatorUI = null;
+
+    [SerializeField] private KeyCode selectKey = KeyCode.LeftShift;
+
+
+    private bool shouldUpdate = false;
 
     private void Update()
     {
-            if (currentValue < 100)
+        if(Input.GetKeyDown(selectKey))
+        {
+            indicatorTimer -= Time.deltaTime;
+            radialIndcatorUI.enabled = true;
+            radialIndcatorUI.fillAmount = indicatorTimer;
+
+            if(indicatorTimer <= 0)
             {
-                image.enabled = true;
-                currentValue += speed * Time.deltaTime;
-                text.text = ((int)currentValue).ToString();
+                indicatorTimer = maxIndcatorTimer;
+                radialIndcatorUI.fillAmount = maxIndcatorTimer;
+                radialIndcatorUI.enabled = false;
             }
-            else
-            {
-                text.text = "PRET";
-            }
-            image.fillAmount = currentValue / 100;
-            if (currentValue >= 100)
-            {
-                image.enabled = false;
-                currentValue = 0;
-                image.fillAmount = 0;
-            }
-    }
+        }
+    }*/
 }
