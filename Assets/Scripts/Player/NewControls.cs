@@ -34,6 +34,9 @@ public class NewControls : MonoBehaviour
     private float normalGravity;
     private IEnumerator coroutine;
 
+    [Header("Movement and speed")]
+    [SerializeField] TrailRenderer trail;
+
     void Start()
     {
         sprite_renderer = GetComponent<SpriteRenderer>();

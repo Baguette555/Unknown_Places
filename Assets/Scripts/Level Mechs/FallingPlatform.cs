@@ -7,8 +7,8 @@ public class FallingPlatform : MonoBehaviour
     [Header("Set the falling and rising speed of the platform.")]
     private float startPos;
     private Rigidbody2D rb;
-    [SerializeField] float fallSpeed = 1.5f;
-    [SerializeField] float riseSpeed = 1f;
+    [SerializeField] float fallSpeed = 2.5f;
+    [SerializeField] float riseSpeed = 1.5f;
 
     [Header("[Debug purposes] Booleans")]
     [SerializeField] bool isRising = false;

@@ -10,7 +10,7 @@ public class changeZone : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            SceneManager.LoadScene("SCN_Intermission");
+            SceneManager.LoadScene("SCN_TestGrandNiveau");
         }
     }
 }
