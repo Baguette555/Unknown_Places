@@ -5,13 +5,20 @@ using UnityEngine.UI;
 
 public class menuCamera : MonoBehaviour
 {
-    public Grid grid;
-    public void SettingsCamera()
+    [SerializeField] GameObject ImageManager;
+
+    private void Awake()
     {
-        grid.transform.Translate(0, 200, 0, Space.World);
+        ImageManager = gameObject.GetComponent<GameObject>();
     }
-    public void MainMenuCamera()
+
+    public void MenuToSettingsCamera()
     {
-        grid.transform.Translate(0, -200, 0, Space.World);
+        ImageManager.transform.Translate(Vector2.right * Time.deltaTime, 0);
+    }
+
+    public void SettingsToMainMenuCamera()
+    {
+        ImageManager.transform.Translate(Vector2.left * Time.deltaTime, 0);
     }
 }
