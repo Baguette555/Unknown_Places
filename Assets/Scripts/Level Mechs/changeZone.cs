@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class changeZone : MonoBehaviour
 {
+    public LevelLoader levelLoader;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            SceneManager.LoadScene("SCN_TestGrandNiveau");
+            levelLoader.LoadNextLevel();
+            //SceneManager.LoadScene("SCN_TestGrandNiveau");
         }
     }
 }
