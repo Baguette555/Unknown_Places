@@ -4,9 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using static System.TimeZoneInfo;
 
 public class mainMenu : MonoBehaviour
 {
+    public LevelLoader levelLoader;     // Connects to the levelLoader script.
+
     public void TitleButton()
     {
         this.transform.Rotate(5, 6, 7, Space.World);
@@ -14,7 +17,14 @@ public class mainMenu : MonoBehaviour
 
     public void ButtonPlay()
     {
-        SceneManager.LoadScene("TerrainJeuAlpha1");
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+    }
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        levelLoader.transition.SetTrigger("MenuStart");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void QuitGame()
