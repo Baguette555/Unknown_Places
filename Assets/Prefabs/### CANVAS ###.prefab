@@ -999,7 +999,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1028,7 +1028,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 117.001114, y: 0, z: 0, w: 28.112066}
+  m_margin: {x: 138.54013, y: 0, z: -145.15425, w: 28.112066}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3379,14 +3379,14 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Commandes :
 
-    - Esc. pour pausew
-
     - L. Shift pour dash
 
-    - ESPACE
-    pour sauter
+    - ESPACE pour sauter
 
-    - Deplacement avec Q et D'
+    -
+    Deplacement avec Q et D
+
+    - Echap pour mettre en pause'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a3addf84bea5cd048abc7a9d4b79c045, type: 2}
   m_sharedMaterial: {fileID: 216533755427258559, guid: a3addf84bea5cd048abc7a9d4b79c045,

@@ -31,6 +31,19 @@ public class PauseMenu : MonoBehaviour
         {
             levelText.text = "Niveau 2";
         }
+        else
+        {
+            float chance = 0.5f;
+            bool heads = Random.value < chance;
+            if (heads)
+            {
+                levelText.text = "where the flip are you";
+            }
+            else
+            {
+                levelText.text = "In an Unknown Place";
+            }
+        }
     }
 
     void Update()
