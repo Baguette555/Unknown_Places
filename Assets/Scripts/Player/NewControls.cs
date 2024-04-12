@@ -19,7 +19,7 @@ public class NewControls : MonoBehaviour
     [Header("Movement and speed")]
     private float horizontal;
     private float speed = 8f;
-    private float jumpForce = 10f;
+    private float jumpForce = 9f;
     private bool isFacingRight = true;
     private Vector2 move;
 
@@ -95,7 +95,7 @@ public class NewControls : MonoBehaviour
 
         if (context.canceled && rb.velocity.y > 0f)
         {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.3f);
         }
     }
 

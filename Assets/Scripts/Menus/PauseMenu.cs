@@ -25,11 +25,15 @@ public class PauseMenu : MonoBehaviour
 
         if (sceneName == "TerrainJeuAlpha1")
         {
-            levelText.text = "Niveau 1";
+            levelText.text = "Chapitre 1 - Niveau 1";
         }
-        else if(sceneName == "SCN_TestGrandNiveau" || sceneBuildIndex == 2)
+        else if(sceneName == "SCN_TestGrandNiveau" || sceneBuildIndex == 3)
         {
-            levelText.text = "Niveau 2";
+            levelText.text = "Chapitre 1 - Niveau 2";
+        }
+        else if(sceneName == "SCN_Intermission1")
+        {
+            levelText.text = "Chapitre 1 - Intermission 1";
         }
         else
         {
