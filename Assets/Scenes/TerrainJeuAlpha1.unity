@@ -803,6 +803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   healthManager: {fileID: 1511302349}
+  newControls: {fileID: 388092519}
 --- !u!50 &96450294
 Rigidbody2D:
   serializedVersion: 4
@@ -1648,6 +1649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   healthManager: {fileID: 1511302349}
+  newControls: {fileID: 388092519}
 --- !u!50 &333455139
 Rigidbody2D:
   serializedVersion: 4
@@ -117033,6 +117035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   healthManager: {fileID: 1511302349}
+  newControls: {fileID: 388092519}
 --- !u!50 &752952286
 Rigidbody2D:
   serializedVersion: 4
@@ -118784,6 +118787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   healthManager: {fileID: 1511302349}
+  newControls: {fileID: 388092519}
 --- !u!50 &1503846187
 Rigidbody2D:
   serializedVersion: 4
@@ -120210,6 +120214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   healthManager: {fileID: 1511302349}
+  newControls: {fileID: 388092519}
 --- !u!50 &2100716330
 Rigidbody2D:
   serializedVersion: 4

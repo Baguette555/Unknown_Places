@@ -23,6 +23,8 @@ public class PauseMenu : MonoBehaviour
         string sceneName = currentScene.name;
         Debug.Log(sceneName + sceneBuildIndex);
 
+
+        // ================================================== TITRE DU NIVEAU DU MENU PAUSE: UTILISER LE BUILDINDEX LORS DU RELEASE
         if (sceneName == "TerrainJeuAlpha1")
         {
             levelText.text = "Chapitre 1 - Niveau 1";
@@ -35,18 +37,13 @@ public class PauseMenu : MonoBehaviour
         {
             levelText.text = "Chapitre 1 - Intermission 1";
         }
+        else if (sceneName == "SCN_TestBottes")
+        {
+            levelText.text = "Chapitre 2 - Niveau 1";
+        }
         else
         {
-            float chance = 0.5f;
-            bool heads = Random.value < chance;
-            if (heads)
-            {
-                levelText.text = "where the flip are you";
-            }
-            else
-            {
-                levelText.text = "In an Unknown Place";
-            }
+            levelText.text = "Debugging in an Unknown Place";
         }
     }
 

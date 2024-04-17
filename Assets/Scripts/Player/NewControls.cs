@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class NewControls : MonoBehaviour
 {
@@ -34,19 +35,35 @@ public class NewControls : MonoBehaviour
     private float normalGravity;
     private IEnumerator coroutine;
 
-    [Header("Movement and speed")]
+    [Header("Dash Trail Renderer")]
     [SerializeField] TrailRenderer trail;
 
-    void Start()
-    {
-        sprite_renderer = GetComponent<SpriteRenderer>();
-        move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-    }
+    [Header("Boots properties")]
+    public bool hasBoots = false;
+    // Activer un particle machin pour les bottes. à voir plus tard ofc
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         normalGravity = rb.gravityScale;
         isFacingRight = true;
+
+        Scene currentScene = SceneManager.GetActiveScene();
+        int sceneBuildIndex = currentScene.buildIndex;
+        if(currentScene.buildIndex >= 4)
+        {
+            hasBoots = true;
+        }
+    }
+    void Start()
+    {
+        sprite_renderer = GetComponent<SpriteRenderer>();
+        move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        if (hasBoots == true)
+        {
+            Debug.Log("Bottes actives. Lancer une anim.");
+            // Démarrer animation des bottes ?
+        }
     }
 
     void Update()

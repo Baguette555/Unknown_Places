@@ -1093,6 +1093,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   healthManager: {fileID: 1749861548}
+  newControls: {fileID: 388092519}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,6 +1718,7 @@ MonoBehaviour:
   dashingCooldown: 1
   dashGravity: 0
   trail: {fileID: 0}
+  hasBoots: 0
 --- !u!1 &527378558
 GameObject:
   m_ObjectHideFlags: 0
@@ -2864,6 +2866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   healthManager: {fileID: 1749861548}
+  newControls: {fileID: 388092519}
 --- !u!1 &1509741678
 GameObject:
   m_ObjectHideFlags: 0
@@ -3124,6 +3127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   healthManager: {fileID: 1749861548}
+  newControls: {fileID: 388092519}
 --- !u!1 &1615565343
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SCN_TestGrandNiveau.unity
     guid: b7fbbe8adc8232f40889170ed7b8e225
+  - enabled: 1
+    path: Assets/Scenes/SCN_TestBottes.unity
+    guid: 8e400beb9a2f8664b86701b4576ce247
   m_configObjects: {}
