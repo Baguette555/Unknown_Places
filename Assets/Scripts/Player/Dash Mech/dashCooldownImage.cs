@@ -26,9 +26,9 @@ public class dashCooldownImage : MonoBehaviour
     // ========================================================================================
 
     // ========================== DETECTION DU L.SHIFT POUR COOLDOWN ==========================
-    private void Update()
+    public void DashImage(InputAction.CallbackContext context)
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && dashReady == true)
+        if(dashReady == true)
         {
             StartCoroutine(Cooldown());
         }

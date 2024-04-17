@@ -721,6 +721,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7619494606031080959}
   - component: {fileID: 843031666140711496}
+  - component: {fileID: 8199047735290118605}
   m_Layer: 0
   m_Name: '### CANVAS ###'
   m_TagString: Untagged
@@ -761,9 +762,86 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 834481117780616571}
+  confMenuBox: {fileID: 4027331899270783145}
+  confQuitBox: {fileID: 4469045532383969207}
   gameUI: {fileID: 8398544593167624084}
   transition: {fileID: 0}
   levelText: {fileID: 1344917377501391691}
+--- !u!114 &8199047735290118605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148008194175896735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 8d57961b68ad67244ba7c0bbcd9f35ed,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 315a3eed-97ae-4da3-b398-6438db9c660e
+    m_ActionName: Player/Jump[/XInputControllerWindows/buttonSouth,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 388ca393-3476-474f-921c-de3edf2ecc73
+    m_ActionName: Player/Move[/Keyboard/a,/XInputControllerWindows/leftStick/left,/Keyboard/d,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4a4df899-81b1-4c9c-a6aa-ec64b6193333
+    m_ActionName: Player/Dash[/Keyboard/shift,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4dab794d-657f-4458-9c27-6fd9da113020
+    m_ActionName: UI (Debug)/GainHealth[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 20399d77-ac96-4c30-ba94-9aa3f12f478b
+    m_ActionName: UI (Debug)/LoseHealth[/Keyboard/o]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 284199aa-bd0d-4d1f-97ef-51f4a0d97d12
+    m_ActionName: LevelLoaderDebug/ChangeLevel[/Keyboard/p,/XInputControllerWindows/select]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 843031666140711496}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fd45fc9c-3069-4d73-873d-ed3e0182b866
+    m_ActionName: Pause/Pause[/Keyboard/escape,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f0a669b1-2258-4cdf-ab4c-b6a1a7b200c2
+    m_ActionName: ImageCooldownManager/StartCooldown[/Keyboard/shift,/XInputControllerWindows/buttonEast]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Pause
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1332217486550674809
 GameObject:
   m_ObjectHideFlags: 0
@@ -2263,6 +2341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2078838080910135145}
   - component: {fileID: 1285987437733743404}
+  - component: {fileID: 4346732371917656469}
   m_Layer: 0
   m_Name: ImageCooldownManager
   m_TagString: Untagged
@@ -2301,6 +2380,81 @@ MonoBehaviour:
   image: {fileID: 8697182169297999817}
   speed: 98
   dashReady: 1
+--- !u!114 &4346732371917656469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3920734506681661900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 8d57961b68ad67244ba7c0bbcd9f35ed,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 315a3eed-97ae-4da3-b398-6438db9c660e
+    m_ActionName: Player/Jump[/XInputControllerWindows/buttonSouth,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 388ca393-3476-474f-921c-de3edf2ecc73
+    m_ActionName: Player/Move[/Keyboard/a,/XInputControllerWindows/leftStick/left,/Keyboard/d,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4a4df899-81b1-4c9c-a6aa-ec64b6193333
+    m_ActionName: Player/Dash[/Keyboard/shift,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4dab794d-657f-4458-9c27-6fd9da113020
+    m_ActionName: UI (Debug)/GainHealth[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 20399d77-ac96-4c30-ba94-9aa3f12f478b
+    m_ActionName: UI (Debug)/LoseHealth[/Keyboard/o]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 284199aa-bd0d-4d1f-97ef-51f4a0d97d12
+    m_ActionName: LevelLoaderDebug/ChangeLevel[/Keyboard/p,/XInputControllerWindows/select]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fd45fc9c-3069-4d73-873d-ed3e0182b866
+    m_ActionName: Pause/Pause[/Keyboard/escape,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1285987437733743404}
+        m_TargetAssemblyTypeName: dashCooldownImage, Assembly-CSharp
+        m_MethodName: DashImage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f0a669b1-2258-4cdf-ab4c-b6a1a7b200c2
+    m_ActionName: ImageCooldownManager/StartCooldown[/Keyboard/shift,/XInputControllerWindows/buttonEast]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: ImageCooldownManager
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &4027331899270783145
 GameObject:
   m_ObjectHideFlags: 0

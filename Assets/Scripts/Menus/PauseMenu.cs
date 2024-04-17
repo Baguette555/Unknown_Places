@@ -4,12 +4,16 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;      // Pause Menu
+    public GameObject confMenuBox;      // The little confimation box before going back to menu for sure
+    public GameObject confQuitBox;      // The little confimation box before quitting the game for sure
+
     public GameObject gameUI;           // Health bar, dashses etc..
 
     public Animator transition;         // For transitions yea yea yea
@@ -47,18 +51,15 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    void Update()
+    public void Pause(InputAction.CallbackContext context)                   // ============== PAUSING [NEW]
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(GameIsPaused == false)
         {
-            if (GameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
+            Pause();
+        }
+        else
+        {
+            Resume();
         }
     }
 
@@ -67,6 +68,9 @@ public class PauseMenu : MonoBehaviour
         gameUI.SetActive(true);
 
         pauseMenuUI.SetActive(false);
+        confMenuBox.SetActive(false);
+        confQuitBox.SetActive(false);
+
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
