@@ -7,6 +7,7 @@ TagManager:
   - SpecialWall
   - ChangeZone
   - Sol
+  - Breakable
   layers:
   - Default
   - TransparentFX

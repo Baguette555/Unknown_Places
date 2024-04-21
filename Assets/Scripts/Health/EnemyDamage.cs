@@ -20,10 +20,14 @@ public class EnemyDamage : MonoBehaviour
         {
             healthManager.TakeDamage(1);
         }
-        else if(collision.gameObject.tag == "Player" && newControls.hasBoots == true)
+        else if(collision.gameObject.tag == "Player" && newControls.hasBoots == true && ennemy.tag == "Breakable")
         {
             healthManager.TakeDamage(0);
             Destroy(ennemy);
+        }
+        else if(collision.gameObject.tag == "Player" && newControls.hasBoots == true && ennemy.tag == "Untagged")
+        {
+            healthManager.TakeDamage(1);
         }
     }
 }

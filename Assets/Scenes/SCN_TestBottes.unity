@@ -116247,7 +116247,7 @@ GameObject:
   - component: {fileID: 449617846}
   m_Layer: 0
   m_Name: redSquareYupYup (6)
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116398,7 +116398,7 @@ GameObject:
   - component: {fileID: 456078782}
   m_Layer: 0
   m_Name: redSquareYupYup
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117081,6 +117081,18 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 822176471}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &822176473 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6475857220008458813, guid: 5265f6d8ac5cd784bb2a5c9f35204842,
+    type: 3}
+  m_PrefabInstance: {fileID: 822176471}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c759300d872e6e14d840d2a7426dd22a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &837153272
 GameObject:
   m_ObjectHideFlags: 0
@@ -117404,7 +117416,7 @@ GameObject:
   - component: {fileID: 1189593983}
   m_Layer: 0
   m_Name: redSquareYupYup (2)
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118185,7 +118197,7 @@ GameObject:
   - component: {fileID: 1880750062}
   m_Layer: 0
   m_Name: redSquareYupYup (3)
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118339,7 +118351,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1895302217
 Transform:
   m_ObjectHideFlags: 0
@@ -118349,7 +118361,7 @@ Transform:
   m_GameObject: {fileID: 1895302216}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 13.1, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -118412,7 +118424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c6b57e3ce4c0a428debbe610360d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelLoader: {fileID: 0}
+  levelLoader: {fileID: 822176473}
 --- !u!1 &1898470505
 GameObject:
   m_ObjectHideFlags: 0
@@ -118594,7 +118606,7 @@ GameObject:
   - component: {fileID: 2046741230}
   m_Layer: 0
   m_Name: redSquareYupYup (1)
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
