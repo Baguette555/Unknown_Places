@@ -2402,6 +2402,8 @@ MonoBehaviour:
   image: {fileID: 8697182169297999817}
   speed: 98
   dashReady: 1
+  NewControls: {fileID: 511114176607201602, guid: bf52058bb0834a147afb3bee594d7fdd,
+    type: 3}
 --- !u!114 &4346732371917656469
 MonoBehaviour:
   m_ObjectHideFlags: 0

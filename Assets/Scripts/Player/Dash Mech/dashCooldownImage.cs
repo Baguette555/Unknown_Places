@@ -15,6 +15,7 @@ public class dashCooldownImage : MonoBehaviour
     [SerializeField] bool dashReady = true;
     float currentValue;
 
+    public NewControls NewControls;
 
     // ======================== INITIALISATION DES COULEURS DES IMAGES ========================
     private void Awake()
@@ -25,10 +26,10 @@ public class dashCooldownImage : MonoBehaviour
     }
     // ========================================================================================
 
-    // ========================== DETECTION DU L.SHIFT POUR COOLDOWN ==========================
+    // ========================== DETECTION DU L.SHIFT POUR COOLDOWN ==========================                 // UPDATE: FAIRE EN SORTE DE DEMARRER CA EN MEME TEMPS DU LSHIFT DANS NEWCONTROLS!! PAS BESOIN DE METTRE DEUX FOIS CALLBACK CONTEXT!!!
     public void DashImage(InputAction.CallbackContext context)
     {
-        if(dashReady == true)
+        if(dashReady == true && NewControls.canDash == true && NewControls.isDashing == false)
         {
             StartCoroutine(Cooldown());
         }

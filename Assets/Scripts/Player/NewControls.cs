@@ -26,14 +26,14 @@ public class NewControls : MonoBehaviour
     private Vector2 move;
 
     [Header("Dashing proprieties")]
-    [SerializeField] bool canDash = true;
+    public bool canDash = true;                 // Public for dashCooldownImage
     public bool isDashing;
     [SerializeField] float dashSpeed = 30f;
     [SerializeField] float dashingTime = 0.4f;
     [SerializeField] float dashingCooldown = 1f;
     [SerializeField] float dashGravity = 0f;
 
-    [SerializeField] float startDashTime = 0.3f; // CHANGE --- Better starting number.
+    [SerializeField] float startDashTime = 0.3f;
 
     private float waitTime;
     private float normalGravity;
@@ -90,7 +90,10 @@ public class NewControls : MonoBehaviour
 
     private bool IsGrounded()                                               // ============== JUMP : GROUND DETECTION [NEW]
     {
-        canDash = true;
+        /*if(isDashing == false)    // Trop buggé pour le moment
+        {
+            canDash = true;
+        }*/
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
@@ -121,7 +124,7 @@ public class NewControls : MonoBehaviour
     }
 
 
-    public void Dash(InputAction.CallbackContext context)                  // ============== NEW DASHING SYSTEM (NOT WORKING IDK WHY)
+    public void Dash(InputAction.CallbackContext context)                  // ============== NEW DASHING SYSTEM
     {
         if (context.performed && canDash == true && isDashing == false)
         {
@@ -133,7 +136,12 @@ public class NewControls : MonoBehaviour
             {
                 StartCoroutine(Dash(Vector2.left));
             }
-
+        }
+        else
+        {
+            // Play SFX "not ready yet"
+            // Show little text "not ready yet"
+            Debug.Log("Dash not ready yet.");
         }
     }
 
@@ -155,7 +163,7 @@ public class NewControls : MonoBehaviour
         rb.velocity = new Vector2(0f, 0f); // Stop dashing.
 
         isDashing = false;
-        yield return new WaitForSeconds(dashingCooldown);
+        yield return new WaitForSeconds(1.17f);
         canDash = true;
 
         /*canDash = false;
