@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class NewControls : MonoBehaviour
 {
@@ -31,6 +32,9 @@ public class NewControls : MonoBehaviour
     [SerializeField] float dashingTime = 0.4f;
     [SerializeField] float dashingCooldown = 1f;
     [SerializeField] float dashGravity = 0f;
+
+    [SerializeField] float startDashTime = 0.3f; // CHANGE --- Better starting number.
+
     private float waitTime;
     private float normalGravity;
     private IEnumerator coroutine;
@@ -121,52 +125,46 @@ public class NewControls : MonoBehaviour
     {
         if (context.performed && canDash == true && isDashing == false)
         {
-            StartCoroutine(Dash());
-            /*if(waitTime >= dashingCooldown)
+            if(isFacingRight && canDash == true && isDashing == false)
             {
-                waitTime = 0f;
-                Invoke("Dashing", 0);
-            }*/
+                StartCoroutine(Dash(Vector2.right));
+            }
+            else if(!isFacingRight && canDash == true && isDashing == false) 
+            {
+                StartCoroutine(Dash(Vector2.left));
+            }
+
         }
     }
-    /*public void Dash() 
+
+    IEnumerator Dash(Vector2 direction)                                                      // ============== DASHING : COROUTINE
     {
         canDash = false;
         isDashing = true;
-        rb.gravityScale = dashGravity;
+        dashingTime = startDashTime; // Reset the dash timer.
 
-        if (move.x == 0)
+        while (dashingTime > 0f)
         {
-            if (isFacingRight)
-            {
-                rb.velocity = new Vector2(transform.localScale.x * dashSpeed, 0);
-            }
-            if (!isFacingRight)
-            {
-                rb.velocity = new Vector2(-transform.localScale.x * dashSpeed, 0);
-            }
+            dashingTime -= Time.deltaTime;
+
+            rb.velocity = direction * (dashSpeed/2f);
+
+            yield return null; // Returns out of the coroutine this frame so we don't hit an infinite loop.
         }
-        else
-        {
-            rb.velocity = new Vector2(move.x * dashSpeed, 0);
-        }
-        Invoke("StopDash", dashingTime);
-    }
-    public void StopDash()
-    {
-        canDash = true;
+
+        rb.velocity = new Vector2(0f, 0f); // Stop dashing.
+
         isDashing = false;
-        rb.gravityScale = normalGravity;
-    }*/
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
 
-    IEnumerator Dash()                                                      // ============== DASHING : COROUTINE
-    {
-        canDash = false;
+        /*canDash = false;
         isDashing = true;
         rb.gravityScale = 0f;
+        
         if (isFacingRight)
         {
-            rb.velocity = new Vector2(transform.localScale.x * dashSpeed, 0);
+            rb.velocity = new Vector2(-transform.localScale.x * dashSpeed, 0);
         }
         if (!isFacingRight)
         {
@@ -178,6 +176,6 @@ public class NewControls : MonoBehaviour
         isDashing = false;
         rb.velocity = new Vector2(transform.localScale.x * 0, 0f);
         yield return new WaitForSeconds(dashingCooldown);
-        canDash = true;
+        canDash = true;*/
     }
 }
