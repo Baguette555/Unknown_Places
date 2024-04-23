@@ -1167,7 +1167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aafc480a4a34dfc4b9d88a6224ca3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 1
+  fallSpeed: 1.5
   riseSpeed: 1
   isRising: 0
   playerOnPlatform: 0
@@ -120385,6 +120385,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 511114176607201602, guid: bf52058bb0834a147afb3bee594d7fdd,
+        type: 3}
+      propertyPath: dashCooldownImage
+      value: 
+      objectReference: {fileID: 8240403932931078601}
     - target: {fileID: 1170808086941170180, guid: bf52058bb0834a147afb3bee594d7fdd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -120598,6 +120603,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56116feb301560a449d4e2156f29951b, type: 3}
+--- !u!114 &8240403932931078601 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1285987437733743404, guid: 56116feb301560a449d4e2156f29951b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8240403932931078600}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c244ac03b2f9f1942abd82dc38494fc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

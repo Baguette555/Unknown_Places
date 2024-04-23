@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class bossChase : MonoBehaviour
 {
-    [SerializeField] float bossSpeed = 5f;
+    [SerializeField] float bossSpeed = 4f;
     Rigidbody2D bossRb;
     Transform target;
     Vector2 moveDirection;

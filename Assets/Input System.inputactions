@@ -282,45 +282,6 @@
                     "isPartOfComposite": false
                 }
             ]
-        },
-        {
-            "name": "ImageCooldownManager",
-            "id": "794e062f-eb91-4ab6-b593-e66d2c0b00c4",
-            "actions": [
-                {
-                    "name": "StartCooldown",
-                    "type": "Button",
-                    "id": "f0a669b1-2258-4cdf-ab4c-b6a1a7b200c2",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "712b65e5-9d8c-48b2-b568-8fb6ad66bde6",
-                    "path": "<Keyboard>/shift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "StartCooldown",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c2eac3f1-cd65-484c-8adf-0894cca790f9",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "StartCooldown",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
         }
     ],
     "controlSchemes": []

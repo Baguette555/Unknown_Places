@@ -20,8 +20,8 @@ public class NewControls : MonoBehaviour
 
     [Header("Movement and speed")]
     private float horizontal;
-    private float speed = 8f;
-    private float jumpForce = 9f;
+    public float speed = 8f;
+    public float jumpForce = 9f;
     private bool isFacingRight = true;
     private Vector2 move;
 
@@ -45,6 +45,9 @@ public class NewControls : MonoBehaviour
     [Header("Boots properties")]
     public bool hasBoots = false;
     // Activer un particle machin pour les bottes. à voir plus tard ofc
+
+    [Header("Script de l'image de cooldown.")]
+    public dashCooldownImage dashCooldownImage;
 
     private void Awake()
     {
@@ -131,6 +134,7 @@ public class NewControls : MonoBehaviour
             if(isFacingRight && canDash == true && isDashing == false)
             {
                 StartCoroutine(Dash(Vector2.right));
+                dashCooldownImage.DashImage();
             }
             else if(!isFacingRight && canDash == true && isDashing == false) 
             {

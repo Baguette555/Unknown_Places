@@ -15,8 +15,6 @@ public class dashCooldownImage : MonoBehaviour
     [SerializeField] bool dashReady = true;
     float currentValue;
 
-    public NewControls NewControls;
-
     // ======================== INITIALISATION DES COULEURS DES IMAGES ========================
     private void Awake()
     {
@@ -27,13 +25,12 @@ public class dashCooldownImage : MonoBehaviour
     // ========================================================================================
 
     // ========================== DETECTION DU L.SHIFT POUR COOLDOWN ==========================                 // UPDATE: FAIRE EN SORTE DE DEMARRER CA EN MEME TEMPS DU LSHIFT DANS NEWCONTROLS!! PAS BESOIN DE METTRE DEUX FOIS CALLBACK CONTEXT!!!
-    public void DashImage(InputAction.CallbackContext context)
+
+    public void DashImage()
     {
-        if(dashReady == true && NewControls.canDash == true && NewControls.isDashing == false)
-        {
-            StartCoroutine(Cooldown());
-        }
+        StartCoroutine(Cooldown());
     }
+
     // ========================================================================================
 
     // ============================ COUROUTINE DU COOLDOWN ============================
@@ -48,7 +45,7 @@ public class dashCooldownImage : MonoBehaviour
 
         while (currentValue < 100) // If timer less than 100 (not fully completed),
         {
-            currentValue += speed * Time.deltaTime / 1f;    // Refill the timer as time passes
+            currentValue += speed * Time.deltaTime / 1.0f;    // Refill the timer as time passes
             text.text = ((int)currentValue).ToString() + "%";   // And add % purely decorative
             image.fillAmount = currentValue / 100;          // So the images fills more and more
             yield return null;              // idfk what this does

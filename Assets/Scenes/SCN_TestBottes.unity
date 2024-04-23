@@ -116202,6 +116202,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 4a4df899-81b1-4c9c-a6aa-ec64b6193333
     m_ActionName: Player/Dash[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 284199aa-bd0d-4d1f-97ef-51f4a0d97d12
+    m_ActionName: LevelLoaderDebug/ChangeLevel[/Keyboard/p]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fd45fc9c-3069-4d73-873d-ed3e0182b866
+    m_ActionName: Pause/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -116225,6 +116233,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  speed: 8
+  jumpForce: 9
   canDash: 1
   isDashing: 0
   dashSpeed: 30
@@ -116234,6 +116244,7 @@ MonoBehaviour:
   startDashTime: 0.3
   trail: {fileID: 0}
   hasBoots: 0
+  dashCooldownImage: {fileID: 1749861549}
 --- !u!1 &449617844
 GameObject:
   m_ObjectHideFlags: 0
@@ -118052,6 +118063,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f26b19715c130a74d9a61eff6a836cba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1749861549 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1285987437733743404, guid: 56116feb301560a449d4e2156f29951b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1749861547}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c244ac03b2f9f1942abd82dc38494fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1824421460
