@@ -139,6 +139,7 @@ public class NewControls : MonoBehaviour
             else if(!isFacingRight && canDash == true && isDashing == false) 
             {
                 StartCoroutine(Dash(Vector2.left));
+                dashCooldownImage.DashImage();
             }
         }
         else
