@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Windows;
 
 public class IntroFinalBoss : MonoBehaviour
@@ -15,7 +16,7 @@ public class IntroFinalBoss : MonoBehaviour
 
     IEnumerator Intro()
     {
-        //newControls.input.YourActionMap.Disable();
+        // Disable ce input system ou la mort
         newControls.speed = 0f;
         newControls.jumpForce = 0f;
         yield return new WaitForSeconds(3);
