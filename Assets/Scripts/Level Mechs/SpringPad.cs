@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SpringPad : MonoBehaviour
 {
-    [SerializeField] float bounce = 5f;
+    [SerializeField] float bounce = 2f;
 
-        private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
