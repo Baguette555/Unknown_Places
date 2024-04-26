@@ -46,7 +46,7 @@ public class BossDistance : MonoBehaviour
             characterIcon.sprite = danger;
             bossIcon.sprite = bossWinning;
         }
-        else if(distInt >= 13 && distInt <= 20) 
+        else if(distInt >= 13 && distInt <= 26) 
         {
             characterIcon.sprite = neutral;
             bossIcon.sprite = bossNeutral;

@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -44,6 +42,10 @@ public class PauseMenu : MonoBehaviour
         else if (sceneName == "SCN_TestBottes")
         {
             levelText.text = "Chapitre 2 - Niveau 1";
+        }
+        else if (sceneName == "SCN_CoursePoursuite")
+        {
+            levelText.text = "Chapitre 4 - Couloir";
         }
         else
         {
