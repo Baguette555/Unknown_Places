@@ -744,6 +744,7 @@ GameObject:
   - component: {fileID: 7619494606031080959}
   - component: {fileID: 843031666140711496}
   - component: {fileID: 8199047735290118605}
+  - component: {fileID: 4629084841092119400}
   m_Layer: 0
   m_Name: '### CANVAS ###'
   m_TagString: Untagged
@@ -789,6 +790,8 @@ MonoBehaviour:
   gameUI: {fileID: 8398544593167624084}
   transition: {fileID: 0}
   levelText: {fileID: 1344917377501391691}
+  levelInt: 0
+  chapterInt: 0
 --- !u!114 &8199047735290118605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -860,6 +863,20 @@ MonoBehaviour:
   m_DefaultActionMap: Pause
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &4629084841092119400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148008194175896735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd21f0c91815e443b22d5a72da72745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 843031666140711496}
+  healthManager: {fileID: 2418554664462457600}
 --- !u!1 &1332217486550674809
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,6 +2065,7 @@ MonoBehaviour:
   hearts1: {fileID: 21300000, guid: 7915895f225b04147b6730ebcd18c56e, type: 3}
   hearts2: {fileID: 21300000, guid: a975550c3b5044f4b8f63f942589acd8, type: 3}
   hearts3: {fileID: 21300000, guid: 5010c4d5ae1f71f41965e0270539bbca, type: 3}
+  discordManager: {fileID: 0}
 --- !u!114 &5019493632773940840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3333,6 +3351,7 @@ MonoBehaviour:
   hearts1: {fileID: 21300000, guid: e78a52b41575ae0478c192bf7902d930, type: 3}
   hearts2: {fileID: 21300000, guid: ccea3428dec7cf24aa7a0f2515383664, type: 3}
   hearts3: {fileID: 21300000, guid: c9df32cda429fd943b9fc05a0cc77a4b, type: 3}
+  discordManager: {fileID: 4629084841092119400}
 --- !u!114 &8554217680692359394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3403,6 +3422,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 4a4df899-81b1-4c9c-a6aa-ec64b6193333
     m_ActionName: Player/Dash[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 284199aa-bd0d-4d1f-97ef-51f4a0d97d12
+    m_ActionName: LevelLoaderDebug/ChangeLevel[/Keyboard/p,/XInputControllerWindows/select]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fd45fc9c-3069-4d73-873d-ed3e0182b866
+    m_ActionName: Pause/Pause[/Keyboard/escape,/XInputControllerWindows/start]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: UI (Debug)

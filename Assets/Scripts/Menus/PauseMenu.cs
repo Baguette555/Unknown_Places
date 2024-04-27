@@ -18,6 +18,9 @@ public class PauseMenu : MonoBehaviour
 
     public TextMeshProUGUI levelText;
 
+    public int levelInt;
+    public int chapterInt;
+
     void Awake()
     {
         Scene currentScene = SceneManager.GetActiveScene();
@@ -30,26 +33,38 @@ public class PauseMenu : MonoBehaviour
         if (sceneName == "TerrainJeuAlpha1")
         {
             levelText.text = "Chapitre 1 - Niveau 1";
+            levelInt = 1;
+            chapterInt = 1;
         }
         else if(sceneName == "SCN_TestGrandNiveau" || sceneBuildIndex == 3)
         {
             levelText.text = "Chapitre 1 - Niveau 2";
+            levelInt = 2;
+            chapterInt = 1;
         }
         else if(sceneName == "SCN_Intermission1")
         {
             levelText.text = "Chapitre 1 - Intermission 1";
+            levelInt = 11;
+            chapterInt = 1;
         }
         else if (sceneName == "SCN_TestBottes")
         {
             levelText.text = "Chapitre 2 - Niveau 1";
+            levelInt = 1;
+            chapterInt = 2;
         }
         else if (sceneName == "SCN_CoursePoursuite")
         {
             levelText.text = "Chapitre 4 - Couloir";
+            levelInt = 4;
+            chapterInt = 4;
         }
         else
         {
             levelText.text = "Debugging in an Unknown Place";
+            levelInt = 0;
+            chapterInt = 0;
         }
     }
 

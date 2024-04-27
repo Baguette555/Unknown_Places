@@ -9,17 +9,11 @@ public class LevelLoader : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
 
+
     public void changeLevel(InputAction.CallbackContext context)
     {
         LoadNextLevel();
     }
-    /*void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            LoadNextLevel();
-        }
-    }*/
 
     public void LoadNextLevel()
     {

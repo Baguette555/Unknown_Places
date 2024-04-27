@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using Unity.VisualScripting;
 
 public class HealthManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class HealthManager : MonoBehaviour
     [SerializeField] Sprite hearts1;
     [SerializeField] Sprite hearts2;
     [SerializeField] Sprite hearts3;
+
+    public discordManager discordManager;
 
 
     private void Awake()
@@ -70,6 +73,7 @@ public class HealthManager : MonoBehaviour
         if (playerHealth > 0)
         {
             playerHealth -= damage;
+            discordManager.updateActivity();
             Debug.Log("HPs :" + playerHealth);
         }
     }

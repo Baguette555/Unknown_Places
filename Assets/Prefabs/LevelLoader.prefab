@@ -260,6 +260,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 3857920144432309507}
   transitionTime: 1
+  discordManager: {fileID: 4629084841092119400, guid: 56116feb301560a449d4e2156f29951b,
+    type: 3}
 --- !u!114 &7382773205035999602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,10 +328,6 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: fd45fc9c-3069-4d73-873d-ed3e0182b866
     m_ActionName: Pause/Pause[/Keyboard/escape,/XInputControllerWindows/start]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f0a669b1-2258-4cdf-ab4c-b6a1a7b200c2
-    m_ActionName: ImageCooldownManager/StartCooldown[/Keyboard/shift,/XInputControllerWindows/buttonEast]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: LevelLoaderDebug

@@ -117032,6 +117032,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 6475857220008458813, guid: 5265f6d8ac5cd784bb2a5c9f35204842,
+        type: 3}
+      propertyPath: DiscordManager
+      value: 
+      objectReference: {fileID: 1749861550}
     - target: {fileID: 8532467152157032792, guid: 5265f6d8ac5cd784bb2a5c9f35204842,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -118076,6 +118081,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c244ac03b2f9f1942abd82dc38494fc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1749861550 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4629084841092119400, guid: 56116feb301560a449d4e2156f29951b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1749861547}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd21f0c91815e443b22d5a72da72745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1824421460
