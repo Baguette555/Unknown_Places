@@ -93,10 +93,6 @@ public class NewControls : MonoBehaviour
 
     private bool IsGrounded()                                               // ============== JUMP : GROUND DETECTION [NEW]
     {
-        /*if(isDashing == false)    // Trop buggé pour le moment
-        {
-            canDash = true;
-        }*/
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
@@ -170,25 +166,5 @@ public class NewControls : MonoBehaviour
         isDashing = false;
         yield return new WaitForSeconds(1.17f);
         canDash = true;
-
-        /*canDash = false;
-        isDashing = true;
-        rb.gravityScale = 0f;
-        
-        if (isFacingRight)
-        {
-            rb.velocity = new Vector2(-transform.localScale.x * dashSpeed, 0);
-        }
-        if (!isFacingRight)
-        {
-            rb.velocity = new Vector2(-transform.localScale.x * dashSpeed, 0);
-        }
-
-        yield return new WaitForSeconds(dashingTime);
-        rb.gravityScale = normalGravity;
-        isDashing = false;
-        rb.velocity = new Vector2(transform.localScale.x * 0, 0f);
-        yield return new WaitForSeconds(dashingCooldown);
-        canDash = true;*/
     }
 }
