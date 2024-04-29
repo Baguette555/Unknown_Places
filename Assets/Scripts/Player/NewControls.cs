@@ -24,6 +24,7 @@ public class NewControls : MonoBehaviour
     public float jumpForce = 9f;
     private bool isFacingRight = true;
     private Vector2 move;
+    public bool canFlip = true;
 
     [Header("Dashing proprieties")]
     public bool canDash = true;                 // Public for dashCooldownImage
@@ -98,10 +99,13 @@ public class NewControls : MonoBehaviour
 
     private void Flip()                                                      // ============== FLIP [NEW]
     {
-        isFacingRight = !isFacingRight;
-        Vector3 localScale = transform.localScale;
-        localScale.x *= -1f;
-        transform.localScale = localScale;
+        if (canFlip == true)
+        {
+            isFacingRight = !isFacingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
+        }
     }
 
     public void Move(InputAction.CallbackContext context)
