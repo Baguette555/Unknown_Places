@@ -161,7 +161,6 @@ public class NewControls : MonoBehaviour
             dashingTime -= Time.deltaTime;
 
             rb.velocity = direction * (dashSpeed/2f);
-
             yield return null; // Returns out of the coroutine this frame so we don't hit an infinite loop.
         }
 

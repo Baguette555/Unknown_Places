@@ -606,7 +606,7 @@ Transform:
   m_GameObject: {fileID: 127016773}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 113, y: 5.5, z: 0}
+  m_LocalPosition: {x: 102.909996, y: 5.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1259,7 +1259,7 @@ Transform:
   m_GameObject: {fileID: 337579168}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 113.4, y: -0.82, z: 0}
+  m_LocalPosition: {x: 103.31, y: -0.82, z: 0}
   m_LocalScale: {x: 1.2033, y: 1.2033, z: 1.2033}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1722,6 +1722,7 @@ MonoBehaviour:
     m_Bits: 8
   speed: 8
   jumpForce: 9
+  canFlip: 1
   canDash: 1
   isDashing: 0
   dashSpeed: 30
@@ -1957,7 +1958,7 @@ Transform:
   m_GameObject: {fileID: 647674038}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 119.4, y: 4.52, z: 0}
+  m_LocalPosition: {x: 109.31, y: 4.52, z: 0}
   m_LocalScale: {x: 1, y: 1.649934, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2906,7 +2907,7 @@ Transform:
   m_GameObject: {fileID: 1509741678}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.64650977, y: 1.946936, z: 5.1954174}
+  m_LocalPosition: {x: -10.736514, y: 1.946936, z: 5.1954174}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3278,6 +3279,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672461869387686666, guid: 56116feb301560a449d4e2156f29951b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -805
       objectReference: {fileID: 0}
     - target: {fileID: 7619494606031080959, guid: 56116feb301560a449d4e2156f29951b,
         type: 3}
