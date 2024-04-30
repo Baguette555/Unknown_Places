@@ -22,7 +22,7 @@ public class FallingPlatform : MonoBehaviour
         rb.gravityScale = 0;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -31,6 +31,22 @@ public class FallingPlatform : MonoBehaviour
     }
 
     private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerOnPlatform = false;
+        }
+    }*/
+
+    private void OnTriggerEnter2D(Collider2D collision)             // Using Trigger and not Collision for the better flemme d'écrire en anglais là
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerOnPlatform = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
