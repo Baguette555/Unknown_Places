@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6049770265158516754}
   - component: {fileID: 5834106360178538289}
   - component: {fileID: 511114176607201602}
+  - component: {fileID: 1792488373078096057}
   m_Layer: 0
   m_Name: '### Player ###'
   m_TagString: Player
@@ -244,6 +245,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 4a4df899-81b1-4c9c-a6aa-ec64b6193333
     m_ActionName: Player/Dash[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 284199aa-bd0d-4d1f-97ef-51f4a0d97d12
+    m_ActionName: LevelLoaderDebug/ChangeLevel[/Keyboard/p]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fd45fc9c-3069-4d73-873d-ed3e0182b866
+    m_ActionName: Pause/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -267,13 +276,41 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  speed: 8
+  jumpForce: 9
+  canFlip: 1
+  playerAnimator: {fileID: 1792488373078096057}
   canDash: 1
   isDashing: 0
   dashSpeed: 30
   dashingTime: 0.4
   dashingCooldown: 1
   dashGravity: 0
+  startDashTime: 0.3
   trail: {fileID: 0}
+  hasBoots: 0
+  dashCooldownImage: {fileID: 0}
+--- !u!95 &1792488373078096057
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2972375820580817256}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0433e289784c7c348ab537c02616ba84, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6845883625578361420
 GameObject:
   m_ObjectHideFlags: 0

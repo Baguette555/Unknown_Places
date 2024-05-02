@@ -41,14 +41,6 @@ public class HealthManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        /*if (Input.GetKeyDown(KeyCode.O) && playerHealth > 0)
-        {
-            playerHealth -= 1;
-        }
-        if (Input.GetKeyDown(KeyCode.I) && playerHealth < 3)
-        {
-            playerHealth += 1;
-        }*/
         if (playerHealth == 3)
         {
             healthImage.sprite = hearts3;

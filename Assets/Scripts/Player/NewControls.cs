@@ -25,6 +25,7 @@ public class NewControls : MonoBehaviour
     private bool isFacingRight = true;
     private Vector2 move;
     public bool canFlip = true;
+    [SerializeField] Animator playerAnimator;
 
     [Header("Dashing proprieties")]
     public bool canDash = true;                 // Public for dashCooldownImage
@@ -94,6 +95,7 @@ public class NewControls : MonoBehaviour
 
     private bool IsGrounded()                                               // ============== JUMP : GROUND DETECTION [NEW]
     {
+        playerAnimator.SetBool("Jumping", false);                      // Animation stops for the jump
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
@@ -111,6 +113,15 @@ public class NewControls : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         horizontal = context.ReadValue<Vector2>().x;
+        if(context.performed)
+        {
+            playerAnimator.SetBool("Running", true);                      // Animation plays for the running sprites
+            playerAnimator.SetBool("Jumping", false);                      // Animation stops for the jump
+        }
+        else if (context.canceled)
+        {
+            playerAnimator.SetBool("Running", false);
+        }
     }
 
     public void Jump(InputAction.CallbackContext context)                   // ============== JUMP [NEW]
@@ -118,6 +129,7 @@ public class NewControls : MonoBehaviour
         if (context.performed && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            playerAnimator.SetBool("Jumping", true);                      // Animation plays for the jump
         }
 
         if (context.canceled && rb.velocity.y > 0f)

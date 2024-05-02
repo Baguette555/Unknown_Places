@@ -1460,6 +1460,7 @@ GameObject:
   - component: {fileID: 388092513}
   - component: {fileID: 388092517}
   - component: {fileID: 388092519}
+  - component: {fileID: 388092520}
   m_Layer: 0
   m_Name: '### Player ###'
   m_TagString: Player
@@ -1723,6 +1724,7 @@ MonoBehaviour:
   speed: 8
   jumpForce: 9
   canFlip: 1
+  playerAnimator: {fileID: 388092520}
   canDash: 1
   isDashing: 0
   dashSpeed: 30
@@ -1733,6 +1735,27 @@ MonoBehaviour:
   trail: {fileID: 0}
   hasBoots: 0
   dashCooldownImage: {fileID: 1749861549}
+--- !u!95 &388092520
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388092511}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0433e289784c7c348ab537c02616ba84, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &527378558
 GameObject:
   m_ObjectHideFlags: 0
