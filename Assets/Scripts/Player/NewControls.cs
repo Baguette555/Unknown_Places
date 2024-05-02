@@ -72,6 +72,7 @@ public class NewControls : MonoBehaviour
         {
             Debug.Log("Bottes actives. Lancer une anim.");
             // Démarrer animation des bottes ?
+            // Particules permanantes pour les bottes : faire comprendre que les bottes brillent
         }
     }
 
@@ -134,6 +135,7 @@ public class NewControls : MonoBehaviour
 
         if (context.canceled && rb.velocity.y > 0f)
         {
+            playerAnimator.SetBool("Jumping", false);                      // Animation stops for the jump
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.3f);
         }
     }
