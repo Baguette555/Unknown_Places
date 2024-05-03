@@ -55,7 +55,7 @@ public class NewControls : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         normalGravity = rb.gravityScale;
-        isFacingRight = true;
+        isFacingRight = true;                       // À voir avec certaines scènes.
 
         Scene currentScene = SceneManager.GetActiveScene();
         int sceneBuildIndex = currentScene.buildIndex;
@@ -92,12 +92,26 @@ public class NewControls : MonoBehaviour
         {
             Flip();
         }
+
+        if (!IsGrounded() && rb.velocity.y <= 0)           // L'animation de saut doit s'arrêter lorsque la vitesse de saut est à 0
+        {
+            playerAnimator.SetBool("Falling", true);                      // Animation plays for falling
+            playerAnimator.SetBool("Jumping", false);                      // Animation stops for the jump
+        }
     }
 
     private bool IsGrounded()                                               // ============== JUMP : GROUND DETECTION [NEW]
     {
-        playerAnimator.SetBool("Jumping", false);                      // Animation stops for the jump
+        playerAnimator.SetBool("Falling", false);                      // Animation stops for falling
+        playerAnimator.SetBool("Landing", true);                      // Animation starts for the landing
+        StartCoroutine(LandingCooldown());
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
+
+    IEnumerator LandingCooldown()
+    {
+        yield return new WaitForSeconds(0.08f);
+        playerAnimator.SetBool("Landing", false);                      // Animation stops for the landing
     }
 
     private void Flip()                                                      // ============== FLIP [NEW]
@@ -117,7 +131,6 @@ public class NewControls : MonoBehaviour
         if(context.performed)
         {
             playerAnimator.SetBool("Running", true);                      // Animation plays for the running sprites
-            playerAnimator.SetBool("Jumping", false);                      // Animation stops for the jump
         }
         else if (context.canceled)
         {
