@@ -25,7 +25,7 @@ public class NewControls : MonoBehaviour
     private bool isFacingRight = true;
     private Vector2 move;
     public bool canFlip = true;
-    [SerializeField] Animator playerAnimator;
+    public Animator playerAnimator;
 
     [Header("Dashing proprieties")]
     public bool canDash = true;                 // Public for dashCooldownImage
@@ -98,6 +98,10 @@ public class NewControls : MonoBehaviour
             playerAnimator.SetBool("Falling", true);                      // Animation plays for falling
             playerAnimator.SetBool("Jumping", false);                      // Animation stops for the jump
         }
+        if (rb.velocity.y > 0.5f)
+        {
+            playerAnimator.SetBool("Jumping", true);
+        }
     }
 
     private bool IsGrounded()                                               // ============== JUMP : GROUND DETECTION [NEW]
@@ -110,7 +114,7 @@ public class NewControls : MonoBehaviour
 
     IEnumerator LandingCooldown()
     {
-        yield return new WaitForSeconds(0.08f);
+        yield return new WaitForSeconds(0.04f);
         playerAnimator.SetBool("Landing", false);                      // Animation stops for the landing
     }
 
