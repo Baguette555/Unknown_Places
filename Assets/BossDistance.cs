@@ -13,6 +13,9 @@ public class BossDistance : MonoBehaviour
     public Transform boss;
     public Transform player;
 
+    [SerializeField] float characterIconPos;
+    [SerializeField] float bossIconPos;
+
     [SerializeField] Image characterIcon;
     [SerializeField] Image bossIcon;
 
@@ -24,10 +27,13 @@ public class BossDistance : MonoBehaviour
     [SerializeField] Sprite bossNeutral;
     [SerializeField] Sprite bossLosing;
 
-
+    [SerializeField] float iconMinDistance;// = 50f; // Distance minimale entre les icônes
+    [SerializeField] float iconMaxDistance;// = -5f; // Distance maximale entre les icônes
+    [SerializeField] float minIconPosX;// = 170f; // Position minimale de l'icône du boss
+    [SerializeField] float maxIconPosX; //= 600f; // Position maximale de l'icône du boss
 
     void Start()
-    {
+    {  
         distanceText.text = "DISTANCE : ";
     }
 
@@ -41,7 +47,13 @@ public class BossDistance : MonoBehaviour
         int distInt = Mathf.RoundToInt(distX);
         distanceText.text = "DISTANCE : " + (distInt - 6) + " m";
 
-        if(distInt <= 12)
+        float normalizedDistance = Mathf.Clamp01((distX - iconMinDistance) / (iconMaxDistance - iconMinDistance));
+        float newIconPosX = Mathf.Lerp(minIconPosX, maxIconPosX, normalizedDistance);
+
+        bossIcon.rectTransform.anchoredPosition = new Vector2(newIconPosX, bossIcon.rectTransform.anchoredPosition.y);
+
+
+        if (distInt <= 12)
         {
             characterIcon.sprite = danger;
             bossIcon.sprite = bossWinning;
@@ -56,7 +68,5 @@ public class BossDistance : MonoBehaviour
             characterIcon.sprite = winning;
             bossIcon.sprite = bossLosing;
         }
-
-
     }
 }

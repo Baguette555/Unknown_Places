@@ -361,7 +361,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1292319466384896463
 RectTransform:
   m_ObjectHideFlags: 0
@@ -792,6 +792,7 @@ MonoBehaviour:
   levelText: {fileID: 1344917377501391691}
   levelInt: 0
   chapterInt: 0
+  rideauUI: {fileID: 6580739339798119181}
 --- !u!114 &8199047735290118605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2684,14 +2685,14 @@ RectTransform:
   m_GameObject: {fileID: 4416892021856751852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15794034, y: 4.581516, z: 2.527733}
+  m_LocalScale: {x: 2.5063968, y: 4.581516, z: 2.527733}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1225929027800000765}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -248.2, y: 3.7}
+  m_AnchoredPosition: {x: -134.2, y: -92.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4889128195313697943
@@ -4130,7 +4131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8164703573639128463
 RectTransform:
   m_ObjectHideFlags: 0

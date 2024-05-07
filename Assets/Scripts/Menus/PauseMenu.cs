@@ -21,6 +21,8 @@ public class PauseMenu : MonoBehaviour
     public int levelInt;
     public int chapterInt;
 
+    public Animator rideauUI;
+
     void Awake()
     {
         Scene currentScene = SceneManager.GetActiveScene();
@@ -73,10 +75,12 @@ public class PauseMenu : MonoBehaviour
         if(GameIsPaused == false)
         {
             Pause();
+            rideauUI.SetBool("Paused", true);           // Anim rideau
         }
         else
         {
             Resume();
+            rideauUI.SetBool("Resumed", true);
         }
     }
 
