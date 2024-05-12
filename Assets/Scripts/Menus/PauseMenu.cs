@@ -21,6 +21,8 @@ public class PauseMenu : MonoBehaviour
     public int levelInt;
     public int chapterInt;
 
+    public string levelTxt;
+
     public Animator rideauUI;
 
     void Awake()
@@ -31,40 +33,42 @@ public class PauseMenu : MonoBehaviour
         Debug.Log(sceneName + sceneBuildIndex);
 
 
-        // ================================================== TITRE DU NIVEAU DU MENU PAUSE: UTILISER LE BUILDINDEX LORS DU RELEASE
+        // ================================================== TITRE DU NIVEAU DU MENU PAUSE: UTILISER LE BUILDINDEX(?) LORS DU RELEASE
         if (sceneName == "TerrainJeuAlpha1")
         {
             levelText.text = "Chapitre 1 - Niveau 1";
-            levelInt = 1;
+            levelTxt = "1";
+            //levelInt = 1;
             chapterInt = 1;
         }
-        else if(sceneName == "SCN_TestGrandNiveau" || sceneBuildIndex == 3)
+        else if(sceneName == "SCN_TestGrandNiveau") //|| sceneBuildIndex == 3)
         {
             levelText.text = "Chapitre 1 - Niveau 2";
-            levelInt = 2;
+            levelTxt = "2";
             chapterInt = 1;
         }
         else if(sceneName == "SCN_Intermission1")
         {
             levelText.text = "Chapitre 1 - Intermission 1";
-            levelInt = 11;
+            levelTxt = "Intermission 1";
             chapterInt = 1;
         }
         else if (sceneName == "SCN_TestBottes")
         {
             levelText.text = "Chapitre 2 - Niveau 1";
-            levelInt = 1;
+            levelTxt = "1";
             chapterInt = 2;
         }
         else if (sceneName == "SCN_CoursePoursuite")
         {
             levelText.text = "Chapitre 4 - Couloir";
-            levelInt = 4;
+            levelTxt = "4";
             chapterInt = 4;
         }
         else
         {
             levelText.text = "Debugging in an Unknown Place";
+            levelTxt = "Debug Mode";
             levelInt = 0;
             chapterInt = 0;
         }

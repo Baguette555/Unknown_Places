@@ -44,7 +44,7 @@ public class discordManager : MonoBehaviour
             var activityManager = discord.GetActivityManager();
             var activity = new Discord.Activity
             {
-                State = "Niveau " + pauseMenu.levelInt,
+                State = "Niveau " + pauseMenu.levelTxt,
                 Details = "Chapitre " + pauseMenu.chapterInt,
                 Assets =
             {

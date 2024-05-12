@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SCN_MainMenu.unity
     guid: 57868d1887bd30e49af16cad2b48ce58
   - enabled: 1
+    path: Assets/Scenes/SCN_IntroCutscene.unity
+    guid: a158654511f133e4485daf2a8dd599da
+  - enabled: 1
     path: Assets/Scenes/TerrainJeuAlpha1.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
