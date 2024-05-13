@@ -41,6 +41,12 @@ public class PauseMenu : MonoBehaviour
             //levelInt = 1;
             chapterInt = 1;
         }
+        else if(sceneName == "SCN_TutoLevel1")
+        {
+            levelText.text = "Chapitre 1 - Niveau 0";
+            levelTxt = "0";
+            chapterInt= 1;
+        }
         else if(sceneName == "SCN_TestGrandNiveau") //|| sceneBuildIndex == 3)
         {
             levelText.text = "Chapitre 1 - Niveau 2";

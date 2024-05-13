@@ -28,6 +28,8 @@ public class NewControls : MonoBehaviour
     public Animator playerAnimator;
 
     [Header("Dashing proprieties")]
+    [SerializeField] bool isAbleToDash = false; // CHECK IF PLAYER IS ABLE TO DASH
+
     public bool canDash = true;                 // Public for dashCooldownImage
     public bool isDashing;
     [SerializeField] float dashSpeed = 30f;
@@ -59,10 +61,22 @@ public class NewControls : MonoBehaviour
 
         Scene currentScene = SceneManager.GetActiveScene();
         int sceneBuildIndex = currentScene.buildIndex;
-        if(currentScene.buildIndex >= 4)
+        // =================================================================================
+        // ============================================ CHECK IF PLAYER IS ABLE TO USE BOOTS
+        if (currentScene.buildIndex >= 6)
         {
             hasBoots = true;
         }
+        // ============================================ CHECK IF PLAYER IS ABLE TO USE DASH
+        if (currentScene.buildIndex >= 3)
+        {
+            isAbleToDash = true;
+        }
+        else
+        {
+            isAbleToDash = false;
+        }
+        // =================================================================================
     }
     void Start()
     {
