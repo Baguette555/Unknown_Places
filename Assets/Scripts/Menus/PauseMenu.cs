@@ -43,9 +43,9 @@ public class PauseMenu : MonoBehaviour
         }
         else if(sceneName == "SCN_TutoLevel1")
         {
-            levelText.text = "Chapitre 1 - Niveau 0";
-            levelTxt = "0";
-            chapterInt= 1;
+            levelText.text = "Chapitre 0 - Introduction";
+            levelTxt = "d'introduction";
+            chapterInt= 0;
         }
         else if(sceneName == "SCN_TestGrandNiveau") //|| sceneBuildIndex == 3)
         {
