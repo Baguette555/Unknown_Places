@@ -57,7 +57,7 @@ public class NewControls : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         normalGravity = rb.gravityScale;
-        isFacingRight = true;                       // À voir avec certaines scènes.
+        isFacingRight = true;                       // À voir avec certaines scènes.    update: quelles "certaines scènes" ?? c'est important de noter finalement
 
         Scene currentScene = SceneManager.GetActiveScene();
         int sceneBuildIndex = currentScene.buildIndex;

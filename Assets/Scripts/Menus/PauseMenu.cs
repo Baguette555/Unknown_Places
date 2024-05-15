@@ -25,6 +25,8 @@ public class PauseMenu : MonoBehaviour
 
     public Animator rideauUI;
 
+    //[SerializeField] string[] Intermissions;      Au cas où il faudrait stocker toutes les scènes d'intermissions pour aller + vite ce sera là sinon ce sera tout écrit un à un vive l'optimisation
+
     void Awake()
     {
         Scene currentScene = SceneManager.GetActiveScene();
@@ -33,27 +35,46 @@ public class PauseMenu : MonoBehaviour
         Debug.Log(sceneName + sceneBuildIndex);
 
 
-        // ================================================== TITRE DU NIVEAU DU MENU PAUSE: UTILISER LE BUILDINDEX(?) LORS DU RELEASE
+        // ====================================================== TITRE DU NIVEAU DU MENU PAUSE & AFFICHAGE NIVEAU DRP
+        // ================================================== Tout est rangé dans l'ordre d'apparition des niveaux en jeu.
         if (sceneName == "TerrainJeuAlpha1")
         {
             levelText.text = "Chapitre 1 - Niveau 1";
-            levelTxt = "1";
-            //levelInt = 1;
+            levelTxt = "1"; // Ce qui sera affiché sur Discord sous le format : "Niveau (levelTxt)"
             chapterInt = 1;
+            //levelInt = 1;
         }
-        else if(sceneName == "SCN_TutoLevel1")
+        else if (sceneName == "SCN_TutoLevel1") // Tuto avant le jeu
         {
             levelText.text = "Chapitre 0 - Introduction";
             levelTxt = "d'introduction";
-            chapterInt= 0;
+            chapterInt = 0;
         }
-        else if(sceneName == "SCN_TestGrandNiveau") //|| sceneBuildIndex == 3)
+        else if (sceneName == "SCN_Intermission01_01") // SCN_Intermission[Chapitre]_[Numéro]
+        {
+            levelText.text = "Chapitre 1 - Avant-Jeu";
+            levelTxt = "d'intermission 0";
+            chapterInt = 0;
+        }
+        else if (sceneName == "SCN_C01_L01")    // SCN_C[Chapitre]_L[Niveau]
+        {
+            levelText.text = "Chapitre 1 - Niveau 1";
+            levelTxt = "1";
+            chapterInt = 1;
+        }
+        else if (sceneName == "SCN_C01_L02")
         {
             levelText.text = "Chapitre 1 - Niveau 2";
             levelTxt = "2";
             chapterInt = 1;
         }
-        else if(sceneName == "SCN_Intermission1")
+        else if (sceneName == "SCN_TestGrandNiveau") //|| sceneBuildIndex == 3)
+        {
+            levelText.text = "Chapitre 1 - Niveau 2";
+            levelTxt = "2";
+            chapterInt = 1;
+        }
+        else if (sceneName == "SCN_Intermission1")
         {
             levelText.text = "Chapitre 1 - Intermission 1";
             levelTxt = "Intermission 1";
@@ -80,7 +101,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void Pause(InputAction.CallbackContext context)                   // ============== PAUSING [NEW]
+    public void Pause(InputAction.CallbackContext context)                   // ======================== PAUSING [NEW]
     {
         if(GameIsPaused == false)
         {
