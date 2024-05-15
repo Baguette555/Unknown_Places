@@ -13,16 +13,16 @@ EditorBuildSettings:
     guid: a158654511f133e4485daf2a8dd599da
   - enabled: 1
     path: Assets/Scenes/SCN_TutoLevel1.unity
-    guid: 42eb03edcccd4af469128ea7136bd5da
+    guid: d9fc3734b5356ff44b2ed1611ddf1979
+  - enabled: 1
+    path: Assets/Scenes/SCN_Intermission1.unity
+    guid: 5a04bb527dd14e643a8c4c38be9b7b6d
   - enabled: 1
     path: Assets/Scenes/SCN_C01_L01.unity
     guid: b20dea4bee5811a43a3bd83e6ebe0f26
   - enabled: 1
     path: Assets/Scenes/Prototype Levels/TerrainJeuAlpha1.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
-    path: Assets/Scenes/SCN_Intermission1.unity
-    guid: 5a04bb527dd14e643a8c4c38be9b7b6d
   - enabled: 1
     path: Assets/Scenes/Prototype Levels/SCN_TestGrandNiveau.unity
     guid: b7fbbe8adc8232f40889170ed7b8e225

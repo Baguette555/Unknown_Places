@@ -8,6 +8,7 @@ TagManager:
   - ChangeZone
   - Sol
   - Breakable
+  - DialogueTrigger
   layers:
   - Default
   - TransparentFX
