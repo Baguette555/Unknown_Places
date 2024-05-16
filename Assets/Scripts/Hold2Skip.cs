@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class Hold2Skip : MonoBehaviour
@@ -51,13 +52,27 @@ public class Hold2Skip : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F))            // Fonctionne bien avec le clavier...
         {
             textAnimator.enabled = false;
             isHolding = true;
             holdStartTime = Time.time;
         }
         else if (Input.GetKeyUp(KeyCode.F))
+        {
+            isHolding = false;
+        }
+    }
+
+    public void HoldToSkip(InputAction.CallbackContext context) // ... Mais pas à la manette ; sera travaillé plus tard
+    {
+        if(context.performed)
+        {
+            textAnimator.enabled = false;
+            isHolding = true;
+            holdStartTime = Time.time;
+        }
+        else if(context.canceled)
         {
             isHolding = false;
         }

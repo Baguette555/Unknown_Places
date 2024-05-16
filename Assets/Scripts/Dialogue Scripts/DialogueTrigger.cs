@@ -8,11 +8,13 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue dialogue;
     public DialogueManager dialogueManager;
     public GameObject dialogueTrigger;
+    public GameObject dialogueUI;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            dialogueUI.SetActive(true);
             TriggerDialogue();
         }
     }
@@ -23,5 +25,10 @@ public class DialogueTrigger : MonoBehaviour
             dialogueManager.animator.SetBool("IsOpen", true);
         }
         DialogueManager.instance.StartDialogue(dialogue);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        dialogueManager.EndDialogue();
     }
 }

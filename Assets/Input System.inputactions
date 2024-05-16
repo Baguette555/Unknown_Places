@@ -288,7 +288,7 @@
             "id": "0bf8c8c3-fb6a-4ccf-b7bf-302b77ed8a97",
             "actions": [
                 {
-                    "name": "Hold2Skip",
+                    "name": "HoldToSkip",
                     "type": "Button",
                     "id": "554e2eef-bb4c-4210-8026-60170599ac4e",
                     "expectedControlType": "Button",
@@ -300,23 +300,89 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "a31add63-ddf3-4cbf-b511-f9ace8b8d656",
-                    "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Hold2Skip",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "f01c6d8b-dbb3-4a3f-ab6b-4360446cc9ad",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Hold2Skip",
+                    "action": "HoldToSkip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "999602a4-2851-4ec0-ba5e-467e4aff285b",
+            "actions": [
+                {
+                    "name": "Navigate",
+                    "type": "PassThrough",
+                    "id": "967109e0-7f9e-41f3-913b-7840153058b9",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Point",
+                    "type": "PassThrough",
+                    "id": "6ad84f84-fffb-4ffa-9ef6-0695079c55b9",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Click",
+                    "type": "PassThrough",
+                    "id": "35f1aee6-e28a-4ca8-baad-b3d1ec0befca",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ScrollWheel",
+                    "type": "PassThrough",
+                    "id": "fa552043-7453-4e50-bd91-4bcb5593a108",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a121ed13-4246-4798-a121-24b427f8612c",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c2d7090d-cb4a-4e77-b3c9-9f07981d7057",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3f6ccaea-50b2-41a0-89d7-19c0c07f4024",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

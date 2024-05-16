@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
+using System.Runtime.CompilerServices;
 
 public class DialogueManager : MonoBehaviour
 {
+    public DialogueTrigger DialogueTrigger;
     public Animator animator;
     public TMP_Text nameText;
     public TMP_Text DialogueText;
@@ -56,10 +59,10 @@ public class DialogueManager : MonoBehaviour
                 yield return new WaitForSeconds(0.05f);
             }
         }
-        void EndDialogue()
-        {
-            //Debug.Log("Femrer");
-            animator.SetBool("IsOpen", false);
-        }
+    }
+    public void EndDialogue()
+    {
+        animator.SetBool("IsOpen", false);
+        DialogueTrigger.dialogueUI.SetActive(false);
     }
 }
