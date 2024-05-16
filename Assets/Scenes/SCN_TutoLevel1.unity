@@ -122278,7 +122278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2069723246}
   - component: {fileID: 2069723248}
-  - component: {fileID: 2069723247}
+  - component: {fileID: 2069723249}
   m_Layer: 0
   m_Name: Projecteur 3
   m_TagString: Untagged
@@ -122301,19 +122301,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 613158426}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2069723247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2069723245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 896e78fa84ee3dd4dbcbe134a1f83fd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 388092511}
 --- !u!114 &2069723248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122364,6 +122351,19 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &2069723249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069723245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2e5fb801e8a0454895f8100b7dde290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 388092511}
 --- !u!1 &2089165853
 GameObject:
   m_ObjectHideFlags: 0
@@ -122793,6 +122793,12 @@ PrefabInstance:
       propertyPath: transition
       value: 
       objectReference: {fileID: 1495671207}
+    - target: {fileID: 843031666140711496, guid: 56116feb301560a449d4e2156f29951b,
+        type: 3}
+      propertyPath: inputActions
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: 8d57961b68ad67244ba7c0bbcd9f35ed,
+        type: 3}
     - target: {fileID: 1148008194175896735, guid: 56116feb301560a449d4e2156f29951b,
         type: 3}
       propertyPath: m_Name

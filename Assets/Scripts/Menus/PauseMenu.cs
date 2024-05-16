@@ -3,19 +3,33 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
+using UnityEngine.Windows;
+using UnityEditor.Build.Player;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
 
+    [Header("Menus UIs")]
     public GameObject pauseMenuUI;      // Pause Menu
     public GameObject confMenuBox;      // The little confimation box before going back to menu for sure
     public GameObject confQuitBox;      // The little confimation box before quitting the game for sure
 
     public GameObject gameUI;           // Health bar, dashses etc..
 
+    /*[Header("Boutons par défaut dans les menus correspondants")]
+    [SerializeField] private GameObject buttonPause;                // Les boutons par défaut dans les menus pause. Sur quel bouton sera sélectionné quand tel menu sera ouvert ?
+    [SerializeField] private GameObject buttonReturnToMenu;
+    [SerializeField] private GameObject buttonQuit;*/
+
+    [Header("Player's stuff")]
+    [SerializeField] private InputActionAsset inputActions;
+
+    [Header("Pause menu transition")]
     public Animator transition;         // For transitions yea yea yea
 
+    [Header("Menu Pause tracking level")]
     public TextMeshProUGUI levelText;
 
     public int levelInt;
@@ -23,9 +37,10 @@ public class PauseMenu : MonoBehaviour
 
     public string levelTxt;
 
+    [Header("Transition du rideau")]
     public Animator rideauUI;
 
-    //[SerializeField] string[] Intermissions;      Au cas où il faudrait stocker toutes les scènes d'intermissions pour aller + vite ce sera là sinon ce sera tout écrit un à un vive l'optimisation
+    //[SerializeField] string[] Intermissions;      Au cas où il faudrait stocker toutes les scènes d'intermissions pour aller + vite ce sera là sinon ce sera tout écrit un à un vive l'optimisation (utiliser arrays ou strings,??)
 
     void Awake()
     {
@@ -101,15 +116,31 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    public void DisablePlayerInputs()
+    {
+        var playerActionMap = inputActions.FindActionMap("Player");
+        playerActionMap.Disable();
+        Debug.Log("Player inputs disabled");
+    }
+
+    public void EnablePlayerInputs()
+    {
+        var playerActionMap = inputActions.FindActionMap("Player");
+        playerActionMap.Enable();
+        Debug.Log("Player inputs enabled");
+    }
+
     public void Pause(InputAction.CallbackContext context)                   // ======================== PAUSING [NEW]
     {
         if(GameIsPaused == false)
         {
+            DisablePlayerInputs();
             Pause();
             rideauUI.SetBool("Paused", true);           // Anim rideau
         }
         else
         {
+            EnablePlayerInputs();
             Resume();
             rideauUI.SetBool("Resumed", true);
         }
@@ -128,7 +159,9 @@ public class PauseMenu : MonoBehaviour
     }
 
     void Pause()
-    {
+    {  
+        //EventSystem.current.SetSelectedGameObject(null);
+        //EventSystem.current.SetSelectedGameObject(buttonPause);
         gameUI.SetActive(false);
 
         pauseMenuUI.SetActive(true);

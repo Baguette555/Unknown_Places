@@ -9,10 +9,10 @@ using UnityEngine.UIElements;
 
 public class GamepadCursor : MonoBehaviour
 {
-    [SerializeField] private PlayerInput playerInput;
-    [SerializeField] private Canvas canvas;
-    [SerializeField] private RectTransform cursorTransform;
-    [SerializeField] private RectTransform canvasRectTransform;
+    [SerializeField] private PlayerInput playerInput;   // Mettre l'input du GamepadCursor
+    [SerializeField] private Canvas canvas;             // Canvas de base
+    [SerializeField] private RectTransform cursorTransform; // Le curseur
+    [SerializeField] private RectTransform canvasRectTransform; // Le même canvas
     [SerializeField] private float cursorSpeed = 1000f;
     [SerializeField] private float padding = 35f;
 
