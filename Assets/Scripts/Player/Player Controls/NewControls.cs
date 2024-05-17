@@ -15,6 +15,7 @@ public class NewControls : MonoBehaviour
     public bool canMove = true;
     public bool canFlip = true; // Movement and speed
     public bool canDash = true; // Dashing proprieties
+    public PauseMenu pauseMenu;
 
     [Header("Déjà défini automatiquement. Changer si ça ne fonctionne pas.")]
     [SerializeField] public Rigidbody2D rb;

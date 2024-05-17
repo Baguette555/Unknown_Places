@@ -13,15 +13,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;      // Pause Menu
     public GameObject confMenuBox;      // The little confimation box before going back to menu for sure
     public GameObject confQuitBox;      // The little confimation box before quitting the game for sure
+    public GameObject settingsMenu;
 
     public GameObject gameUI;           // Health bar, dashses etc..
-
-    public GamepadCursor gamepadCursor;
-
-    /*[Header("Boutons par défaut dans les menus correspondants")]
-    [SerializeField] private GameObject buttonPause;                // Les boutons par défaut dans les menus pause. Sur quel bouton sera sélectionné quand tel menu sera ouvert ?
-    [SerializeField] private GameObject buttonReturnToMenu;
-    [SerializeField] private GameObject buttonQuit;*/
 
     [Header("Player's stuff")]
     public NewControls newControls;
@@ -169,6 +163,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         confMenuBox.SetActive(false);
         confQuitBox.SetActive(false);
+        settingsMenu.SetActive(false);
 
         Time.timeScale = 1f;
         GameIsPaused = false;

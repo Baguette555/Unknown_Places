@@ -253,6 +253,30 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: fd45fc9c-3069-4d73-873d-ed3e0182b866
     m_ActionName: Pause/Pause[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 554e2eef-bb4c-4210-8026-60170599ac4e
+    m_ActionName: SkipCutscene/HoldToSkip[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 967109e0-7f9e-41f3-913b-7840153058b9
+    m_ActionName: UI/Navigate
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6ad84f84-fffb-4ffa-9ef6-0695079c55b9
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 35f1aee6-e28a-4ca8-baad-b3d1ec0befca
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fa552043-7453-4e50-bd91-4bcb5593a108
+    m_ActionName: UI/ScrollWheel
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 47671dad-b45a-4efc-a783-2f8dc4ba4add
+    m_ActionName: Dialogue/Interact[/XInputControllerWindows/buttonWest,/Keyboard/e,/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -270,6 +294,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 805f30b563f8cee4883f8a4c03508f3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canJump: 1
+  canMove: 1
+  canFlip: 1
+  canDash: 1
+  pauseMenu: {fileID: 843031666140711496, guid: 56116feb301560a449d4e2156f29951b,
+    type: 3}
   rb: {fileID: 6049770265158516754}
   sprite_renderer: {fileID: 5990153892489915263}
   groundCheck: {fileID: 1173632806771848584}
@@ -278,9 +308,8 @@ MonoBehaviour:
     m_Bits: 8
   speed: 8
   jumpForce: 9
-  canFlip: 1
   playerAnimator: {fileID: 1792488373078096057}
-  canDash: 1
+  isAbleToDash: 0
   isDashing: 0
   dashSpeed: 30
   dashingTime: 0.4
