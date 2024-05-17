@@ -1,17 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.InputSystem.Users;
-using UnityEngine.UIElements;
 
 public class GamepadCursor : MonoBehaviour
 {
     [SerializeField] private PlayerInput playerInput;   // Mettre l'input du GamepadCursor
     [SerializeField] private Canvas canvas;             // Canvas de base
-    [SerializeField] private RectTransform cursorTransform; // Le curseur
+    [SerializeField] public RectTransform cursorTransform; // Le curseur
     [SerializeField] private RectTransform canvasRectTransform; // Le même canvas
     [SerializeField] private float cursorSpeed = 1000f;
     [SerializeField] private float padding = 35f;
@@ -120,7 +116,7 @@ public class GamepadCursor : MonoBehaviour
     {
         if(previousControlScheme != playerInput.currentControlScheme)
         {
-            ControlsChanged();
+            onControlsChanged();
         }
         previousControlScheme = playerInput.currentControlScheme;
     }*/

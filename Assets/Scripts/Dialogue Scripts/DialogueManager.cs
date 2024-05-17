@@ -14,7 +14,7 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text DialogueText;
     private Queue<string> sentences;
 
-
+    public PauseMenu pauseMenu;
     public static DialogueManager instance;
 
     private void Awake()
@@ -62,7 +62,9 @@ public class DialogueManager : MonoBehaviour
     }
     public void EndDialogue()
     {
+        pauseMenu.EnablePlayerInputs();
         animator.SetBool("IsOpen", false);
         DialogueTrigger.dialogueUI.SetActive(false);
+        DialogueTrigger.dialogueStarted = false;
     }
 }

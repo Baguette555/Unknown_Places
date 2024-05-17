@@ -10,8 +10,14 @@ using Unity.VisualScripting;
 
 public class NewControls : MonoBehaviour
 {
+    [Header("ActionMap : Pour désactiver / réactiver les touches")]
+    public bool canJump = true;
+    public bool canMove = true;
+    public bool canFlip = true; // Movement and speed
+    public bool canDash = true; // Dashing proprieties
+
     [Header("Déjà défini automatiquement. Changer si ça ne fonctionne pas.")]
-    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] public Rigidbody2D rb;
     [SerializeField] SpriteRenderer sprite_renderer;
 
     [Header("isGrounded?! :( faut pas gronder")]
@@ -24,13 +30,13 @@ public class NewControls : MonoBehaviour
     public float jumpForce = 9f;
     private bool isFacingRight = true;
     private Vector2 move;
-    public bool canFlip = true;
+    // canFlip a été déplacé en haut
     public Animator playerAnimator;
 
     [Header("Dashing proprieties")]
     [SerializeField] bool isAbleToDash = false; // CHECK IF PLAYER IS ABLE TO DASH
 
-    public bool canDash = true;                 // Public for dashCooldownImage
+    // canDash a été déplacé en haut
     public bool isDashing;
     [SerializeField] float dashSpeed = 30f;
     [SerializeField] float dashingTime = 0.4f;
@@ -145,53 +151,62 @@ public class NewControls : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
-        horizontal = context.ReadValue<Vector2>().x;
-        if(context.performed)
+        if (canMove)
         {
-            playerAnimator.SetBool("Running", true);                      // Animation plays for the running sprites
-        }
-        else if (context.canceled)
-        {
-            playerAnimator.SetBool("Running", false);
+            horizontal = context.ReadValue<Vector2>().x;
+            if (context.performed)
+            {
+                playerAnimator.SetBool("Running", true);                      // Animation plays for the running sprites
+            }
+            else if (context.canceled)
+            {
+                playerAnimator.SetBool("Running", false);
+            }
         }
     }
 
     public void Jump(InputAction.CallbackContext context)                   // ============== JUMP [NEW]
     {
-        if (context.performed && IsGrounded())
+        if (canJump)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            playerAnimator.SetBool("Jumping", true);                      // Animation plays for the jump
-        }
+            if (context.performed && IsGrounded())
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                playerAnimator.SetBool("Jumping", true);                      // Animation plays for the jump
+            }
 
-        if (context.canceled && rb.velocity.y > 0f)
-        {
-            playerAnimator.SetBool("Jumping", false);                      // Animation stops for the jump
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.3f);
+            if (context.canceled && rb.velocity.y > 0f)
+            {
+                playerAnimator.SetBool("Jumping", false);                      // Animation stops for the jump
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.2f);
+            }
         }
     }
 
 
     public void Dash(InputAction.CallbackContext context)                  // ============== NEW DASHING SYSTEM
     {
-        if (context.performed && canDash == true && isDashing == false)
+        if (canDash)
         {
-            if(isFacingRight && canDash == true && isDashing == false)
+            if (context.performed && isDashing == false)
             {
-                StartCoroutine(Dash(Vector2.right));
-                dashCooldownImage.DashImage();
+                if (isFacingRight && canDash == true && isDashing == false)
+                {
+                    StartCoroutine(Dash(Vector2.right));
+                    dashCooldownImage.DashImage();
+                }
+                else if (!isFacingRight && canDash == true && isDashing == false)
+                {
+                    StartCoroutine(Dash(Vector2.left));
+                    dashCooldownImage.DashImage();
+                }
             }
-            else if(!isFacingRight && canDash == true && isDashing == false) 
+            else
             {
-                StartCoroutine(Dash(Vector2.left));
-                dashCooldownImage.DashImage();
+                // Play SFX "not ready yet"
+                // Show little text "not ready yet"
+                Debug.Log("Dash not ready yet.");
             }
-        }
-        else
-        {
-            // Play SFX "not ready yet"
-            // Show little text "not ready yet"
-            Debug.Log("Dash not ready yet.");
         }
     }
 

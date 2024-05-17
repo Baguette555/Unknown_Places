@@ -3,13 +3,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.InputSystem;
-using UnityEngine.EventSystems;
-using UnityEngine.Windows;
-using UnityEditor.Build.Player;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+    public bool isPaused = false; // For other scripts
 
     [Header("Menus UIs")]
     public GameObject pauseMenuUI;      // Pause Menu
@@ -18,13 +16,16 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject gameUI;           // Health bar, dashses etc..
 
+    public GamepadCursor gamepadCursor;
+
     /*[Header("Boutons par défaut dans les menus correspondants")]
     [SerializeField] private GameObject buttonPause;                // Les boutons par défaut dans les menus pause. Sur quel bouton sera sélectionné quand tel menu sera ouvert ?
     [SerializeField] private GameObject buttonReturnToMenu;
     [SerializeField] private GameObject buttonQuit;*/
 
     [Header("Player's stuff")]
-    [SerializeField] private InputActionAsset inputActions;
+    public NewControls newControls;
+    public InputActionAsset inputActions;
 
     [Header("Pause menu transition")]
     public Animator transition;         // For transitions yea yea yea
@@ -118,15 +119,26 @@ public class PauseMenu : MonoBehaviour
 
     public void DisablePlayerInputs()
     {
-        var playerActionMap = inputActions.FindActionMap("Player");
-        playerActionMap.Disable();
+        newControls.speed = 0f;
+        newControls.canFlip = false;
+        newControls.canDash = false;
+        newControls.canMove = false;
+        newControls.canJump = false;
+
+        //var playerActionMap = inputActions.FindActionMap("Player");
+        //playerActionMap.Disable();
         Debug.Log("Player inputs disabled");
     }
 
     public void EnablePlayerInputs()
     {
-        var playerActionMap = inputActions.FindActionMap("Player");
-        playerActionMap.Enable();
+        newControls.canFlip = true;
+        newControls.canDash = true;
+        newControls.canMove = true;
+        newControls.canJump = true;
+        newControls.speed = 8f;
+        //var playerActionMap = inputActions.FindActionMap("Player");
+        //playerActionMap.Enable();
         Debug.Log("Player inputs enabled");
     }
 
@@ -135,6 +147,7 @@ public class PauseMenu : MonoBehaviour
         if(GameIsPaused == false)
         {
             DisablePlayerInputs();
+            isPaused = true;
             Pause();
             rideauUI.SetBool("Paused", true);           // Anim rideau
         }
@@ -142,12 +155,15 @@ public class PauseMenu : MonoBehaviour
         {
             EnablePlayerInputs();
             Resume();
+            isPaused = false;
             rideauUI.SetBool("Resumed", true);
         }
     }
 
     public void Resume()
     {
+        isPaused = false;
+        EnablePlayerInputs();
         gameUI.SetActive(true);
 
         pauseMenuUI.SetActive(false);

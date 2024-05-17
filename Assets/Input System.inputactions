@@ -80,6 +80,17 @@
                 },
                 {
                     "name": "Left",
+                    "id": "9e533607-37e4-45e4-89c8-60c09aa057a7",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Left",
                     "id": "b4824eda-81f9-46eb-935c-8bec3db7ab60",
                     "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
@@ -93,6 +104,17 @@
                     "name": "Right",
                     "id": "c1306b18-c20b-4dab-875d-888dd0057d4b",
                     "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Right",
+                    "id": "d1162646-ef7d-4520-ade7-a5d14914efe2",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -383,6 +405,56 @@
                     "processors": "",
                     "groups": "",
                     "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Dialogue",
+            "id": "11df625a-bc2e-40e6-ba8b-dac4730b8863",
+            "actions": [
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "47671dad-b45a-4efc-a783-2f8dc4ba4add",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e4160697-d569-43e2-9a92-4caeab9bdb16",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f421c040-b642-4840-ad5e-dce2c540776d",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1b31b136-d702-4fe1-be88-b94ae9962626",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

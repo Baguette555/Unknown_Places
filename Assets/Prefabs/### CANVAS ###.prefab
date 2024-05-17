@@ -784,14 +784,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f4e8091dbbb2874ea35c3aafb669432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPaused: 0
   pauseMenuUI: {fileID: 834481117780616571}
   confMenuBox: {fileID: 4027331899270783145}
   confQuitBox: {fileID: 4469045532383969207}
   gameUI: {fileID: 8398544593167624084}
-  transition: {fileID: 0}
+  newControls: {fileID: 511114176607201602, guid: bf52058bb0834a147afb3bee594d7fdd,
+    type: 3}
+  inputActions: {fileID: -944628639613478452, guid: 8d57961b68ad67244ba7c0bbcd9f35ed,
+    type: 3}
+  transition: {fileID: 6580739339798119181}
   levelText: {fileID: 1344917377501391691}
   levelInt: 0
   chapterInt: 0
+  levelTxt: 
   rideauUI: {fileID: 6580739339798119181}
 --- !u!114 &8199047735290118605
 MonoBehaviour:
@@ -859,6 +865,30 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: fd45fc9c-3069-4d73-873d-ed3e0182b866
     m_ActionName: Pause/Pause[/Keyboard/escape,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 554e2eef-bb4c-4210-8026-60170599ac4e
+    m_ActionName: SkipCutscene/HoldToSkip
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 967109e0-7f9e-41f3-913b-7840153058b9
+    m_ActionName: UI/Navigate
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6ad84f84-fffb-4ffa-9ef6-0695079c55b9
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 35f1aee6-e28a-4ca8-baad-b3d1ec0befca
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fa552043-7453-4e50-bd91-4bcb5593a108
+    m_ActionName: UI/ScrollWheel
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 47671dad-b45a-4efc-a783-2f8dc4ba4add
+    m_ActionName: Dialogue/Interact[/Keyboard/e,/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Pause
