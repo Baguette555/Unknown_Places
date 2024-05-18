@@ -25,6 +25,10 @@ public class NewControls : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
 
+    // _inputManager = new Player_Input_Manager();
+    // _moveAction = _InputManager.Player.Move; ??
+    // _moveAction.Disable();
+
     [Header("Movement and speed")]
     private float horizontal;
     public float speed = 8f;

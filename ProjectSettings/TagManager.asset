@@ -9,6 +9,7 @@ TagManager:
   - Sol
   - Breakable
   - DialogueTrigger
+  - Musique
   layers:
   - Default
   - TransparentFX

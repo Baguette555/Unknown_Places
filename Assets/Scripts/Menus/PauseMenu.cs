@@ -140,17 +140,17 @@ public class PauseMenu : MonoBehaviour
     {
         if(GameIsPaused == false)
         {
+            rideauUI.SetBool("Paused", true);           // Anim rideau
             DisablePlayerInputs();
             isPaused = true;
             Pause();
-            rideauUI.SetBool("Paused", true);           // Anim rideau
         }
         else
         {
-            EnablePlayerInputs();
             Resume();
             isPaused = false;
             rideauUI.SetBool("Resumed", true);
+            EnablePlayerInputs();
         }
     }
 

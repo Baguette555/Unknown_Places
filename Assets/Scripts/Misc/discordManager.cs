@@ -16,6 +16,11 @@ public class discordManager : MonoBehaviour
 
     private int frameCounter = 0;
 
+    /*private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);     // Ne marche pas : Reload la scène à l'infini
+    }*/
+
     void Start()
     {
         discord = new Discord.Discord(1233671946621943839, (ulong)Discord.CreateFlags.NoRequireDiscord);

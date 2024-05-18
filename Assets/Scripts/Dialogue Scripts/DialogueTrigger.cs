@@ -13,12 +13,12 @@ public class DialogueTrigger : MonoBehaviour
 
     public PauseMenu pauseMenu; // Used to disable/enable player's input
     public NewControls NewControls;
-    [SerializeField] bool inTrigger;
+    public bool inTrigger;
 
     public bool dialogueStarted = false;
     [SerializeField] private GameObject player;    // To check if the player is in da collider
 
-    [SerializeField] private SpriteRenderer spriteInteract;
+    public SpriteRenderer spriteInteract;
     [SerializeField] private float alphaTime;
 
     private void Start()
