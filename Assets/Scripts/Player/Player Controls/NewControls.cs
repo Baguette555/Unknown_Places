@@ -91,6 +91,12 @@ public class NewControls : MonoBehaviour
     }
     void Start()
     {
+        canFlip = true;
+        canDash = true;
+        canMove = true;
+        canJump = true;
+        speed = 8f;
+
         sprite_renderer = GetComponent<SpriteRenderer>();
         move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         if (hasBoots == true)

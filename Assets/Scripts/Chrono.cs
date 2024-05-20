@@ -8,6 +8,7 @@ public class Chrono : MonoBehaviour
 {
     [SerializeField] public float timeValue = 0;
     [SerializeField] TextMeshProUGUI TimeText;
+    public bool timePaused = false;
 
     private void Start()
     {
@@ -16,8 +17,15 @@ public class Chrono : MonoBehaviour
 
     private void Update()
     {
-        timeValue += Time.deltaTime;
-        DisplayTime(timeValue);
+        if(!timePaused)
+        {
+            timeValue += Time.deltaTime;
+            DisplayTime(timeValue);
+        }
+        else
+        {
+            // does nothin
+        }
     }
 
     private void DisplayTime(float timeToDisplay)
@@ -35,5 +43,18 @@ public class Chrono : MonoBehaviour
         var ms = (int)((timeToDisplay - t0) * 100);
 
         TimeText.text = $"{m:00}:{s:00}:{ms:00}";
+    }
+
+    public void TimerPaused()       // Ne sera sûrement presque jamais appelé : l'idée du chrono est changée
+    {
+        timePaused = !timePaused;
+        if(timePaused)
+        {
+            Debug.Log("Temps mis en pause");
+        }
+        else
+        {
+            Debug.Log("Temps repris");
+        }
     }
 }

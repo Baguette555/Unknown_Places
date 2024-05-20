@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.XR;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -111,6 +112,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+
     public void DisablePlayerInputs()
     {
         newControls.speed = 0f;
@@ -159,6 +161,7 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
         EnablePlayerInputs();
         gameUI.SetActive(true);
+        //Chrono.TimerPaused();     Ne m'en sers pas : reste quand-même ici au cas où.
 
         pauseMenuUI.SetActive(false);
         confMenuBox.SetActive(false);
@@ -171,9 +174,8 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {  
-        //EventSystem.current.SetSelectedGameObject(null);
-        //EventSystem.current.SetSelectedGameObject(buttonPause);
         gameUI.SetActive(false);
+        //Chrono.TimerPaused();
 
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
