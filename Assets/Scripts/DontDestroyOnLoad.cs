@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DontDestroyOnLoad : MonoBehaviour
 {
@@ -9,9 +10,19 @@ public class DontDestroyOnLoad : MonoBehaviour
     [SerializeField] private GameObject originalGameObject;
     private void Awake()
     {
-        originalGameObject = this.gameObject;
+        //GameObject child = originalGameObject.transform.GetChild(0).gameObject; // Get the child of the UI canvas
+
+
+        Scene currentScene = SceneManager.GetActiveScene(); // get the scene name to destroy the timer when main menu is entered
+        string nameScene = currentScene.name;
+        if (nameScene == "SCN_MainMenu")
+        {
+            Destroy(this.gameObject);
+            //Destroy(child);
+        }
+
+        originalGameObject = this.gameObject;   // else it does not destroy
         DontDestroyOnLoad(originalGameObject);
-        GameObject child = originalGameObject.transform.GetChild(0).gameObject;
-        DontDestroyOnLoad(child);
+        //DontDestroyOnLoad(child);
     }
 }

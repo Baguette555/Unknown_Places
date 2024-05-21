@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Chrono : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class Chrono : MonoBehaviour
 
     private void Start()
     {
-        TimeText = this.GetComponent<TextMeshProUGUI>();
+        TimeText = this.GetComponent<TextMeshProUGUI>();   
     }
 
     private void Update()
@@ -24,7 +25,7 @@ public class Chrono : MonoBehaviour
         }
         else
         {
-            // does nothin
+            // used to have a stop time but will be overused for speedrun we do not support pause players here 
         }
     }
 

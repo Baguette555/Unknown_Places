@@ -119638,6 +119638,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: '### PermaUI ###'
       objectReference: {fileID: 0}
+    - target: {fileID: 5310558260266939045, guid: 391a67c674498b746919ac99ddb87006,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6357699802003687089, guid: 391a67c674498b746919ac99ddb87006,
         type: 3}
       propertyPath: m_Pivot.x
@@ -120189,6 +120194,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: '### CANVAS ###'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1148008194175896735, guid: 56116feb301560a449d4e2156f29951b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1285987437733743404, guid: 56116feb301560a449d4e2156f29951b,
         type: 3}
