@@ -9,7 +9,7 @@ public class bossChase : MonoBehaviour
     Rigidbody2D bossRb;
     Transform target;
     Vector2 moveDirection;
-    public HealthManager healthManager;
+    public HealthManagerBoss healthManager;
 
     private void Awake()
     {

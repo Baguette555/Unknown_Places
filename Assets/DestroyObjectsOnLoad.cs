@@ -8,6 +8,8 @@ public class DestroyObjectsOnLoad : MonoBehaviour
     void Start()
     {
         Destroy(GameObject.Find("### PermaUI ###"));    // UI used for chrono
+        Destroy(GameObject.Find("### PermaUI_CH01_LV01 ###"));    // UI used for chrono
+        Destroy(GameObject.Find("### PermaUI_CH01_LV02 ###"));    // UI used for chrono
         Destroy(GameObject.Find("TutorialMusic"));      // Music
     }
 }
