@@ -25,10 +25,6 @@ public class NewControls : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
 
-    // _inputManager = new Player_Input_Manager();
-    // _moveAction = _InputManager.Player.Move; ??
-    // _moveAction.Disable();
-
     [Header("Movement and speed")]
     private float horizontal;
     public float speed = 8f;
@@ -68,7 +64,7 @@ public class NewControls : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         normalGravity = rb.gravityScale;
-        isFacingRight = true;                       // À voir avec certaines scènes.    update: quelles "certaines scènes" ?? c'est important de noter finalement
+        isFacingRight = true;                       // Ne pas flip sur les scènes inversées, cause le joueur à flip tous ces mouvements
 
         Scene currentScene = SceneManager.GetActiveScene();
         int sceneBuildIndex = currentScene.buildIndex;

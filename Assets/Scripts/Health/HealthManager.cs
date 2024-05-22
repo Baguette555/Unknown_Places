@@ -16,7 +16,12 @@ public class HealthManager : MonoBehaviour
     [SerializeField] Sprite hearts2;
     [SerializeField] Sprite hearts3;
 
+    public SpawnPoint spawnPoint;
+    [SerializeField] Animator deathTransition;
     public discordManager discordManager;
+    public NewControls NewControls;
+
+    private int deaths; // Will maybe be used, or not, but I'll keep it there.
 
 
     private void Awake()
@@ -56,7 +61,8 @@ public class HealthManager : MonoBehaviour
         if (playerHealth <= 0)
         {
             healthImage.sprite = hearts0;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            StartCoroutine(deathRespawn());
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
@@ -68,5 +74,21 @@ public class HealthManager : MonoBehaviour
             discordManager.updateActivity();
             Debug.Log("HPs :" + playerHealth);
         }
+    }
+
+    IEnumerator deathRespawn()
+    {
+        Debug.Log("Player died");
+        deaths++;
+        NewControls.speed = 0f;
+        deathTransition.SetBool("ded", true);
+
+        yield return new WaitForSeconds(0.8f);
+        playerHealth = 3; // healed back
+        spawnPoint.RespawnToSpawnPoint();
+        yield return new WaitForSeconds(0.5f);
+        NewControls.speed = 8f;
+
+        deathTransition.SetBool("ded", false);
     }
 }

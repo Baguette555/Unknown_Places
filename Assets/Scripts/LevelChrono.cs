@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Chrono : MonoBehaviour
+public class LevelChrono : MonoBehaviour
 {
     [SerializeField] public float timeValue = 0;
     [SerializeField] TextMeshProUGUI TimeText;
@@ -25,8 +25,7 @@ public class Chrono : MonoBehaviour
         }
         else
         {
-            // The timer used to not pause during gameplay, but since it breaks everything I'll stop the timer when paused.
-            // It was for players that uses the pause menu to see the level before playing it.
+            // Pause the timer to show it to the player.
         }
     }
 
@@ -45,5 +44,10 @@ public class Chrono : MonoBehaviour
         var ms = (int)((timeToDisplay - t0) * 100);
 
         TimeText.text = $"{m:00}:{s:00}:{ms:00}";
+    }
+
+    public void PauseTimer()
+    {
+        timePaused = !timePaused;
     }
 }

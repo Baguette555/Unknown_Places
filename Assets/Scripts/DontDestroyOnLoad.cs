@@ -11,18 +11,8 @@ public class DontDestroyOnLoad : MonoBehaviour
     private void Awake()
     {
         //GameObject child = originalGameObject.transform.GetChild(0).gameObject; // Get the child of the UI canvas
-
-
-        Scene currentScene = SceneManager.GetActiveScene(); // get the scene name to destroy the timer when main menu is entered
-        string nameScene = currentScene.name;
-        if (nameScene == "SCN_MainMenu")
-        {
-            Destroy(this.gameObject);
-            //Destroy(child);
-        }
-
-        originalGameObject = this.gameObject;   // else it does not destroy
+        originalGameObject = this.gameObject;
         DontDestroyOnLoad(originalGameObject);
-        //DontDestroyOnLoad(child);
+        //DontDestroyOnLoad(child); // Only the root can be used for DontDestroyOnLoad.
     }
 }

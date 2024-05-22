@@ -3368,7 +3368,10 @@ MonoBehaviour:
   hearts1: {fileID: 21300000, guid: 7915895f225b04147b6730ebcd18c56e, type: 3}
   hearts2: {fileID: 21300000, guid: a975550c3b5044f4b8f63f942589acd8, type: 3}
   hearts3: {fileID: 21300000, guid: 5010c4d5ae1f71f41965e0270539bbca, type: 3}
+  spawnPoint: {fileID: 0}
+  deathTransition: {fileID: 0}
   discordManager: {fileID: 0}
+  NewControls: {fileID: 0}
 --- !u!114 &5019493632773940840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5338,7 +5341,10 @@ MonoBehaviour:
   hearts1: {fileID: 21300000, guid: e78a52b41575ae0478c192bf7902d930, type: 3}
   hearts2: {fileID: 21300000, guid: ccea3428dec7cf24aa7a0f2515383664, type: 3}
   hearts3: {fileID: 21300000, guid: c9df32cda429fd943b9fc05a0cc77a4b, type: 3}
+  spawnPoint: {fileID: 0}
+  deathTransition: {fileID: 0}
   discordManager: {fileID: 4629084841092119400}
+  NewControls: {fileID: 0}
 --- !u!114 &8554217680692359394
 MonoBehaviour:
   m_ObjectHideFlags: 0
