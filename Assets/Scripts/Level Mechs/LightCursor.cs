@@ -10,6 +10,6 @@ public class LightCursor : MonoBehaviour
         Vector3 Look = transform.InverseTransformPoint(Cursor.transform.position);
         float Angle = Mathf.Atan2(Look.y, Look.x) * Mathf.Rad2Deg;
 
-        transform.Rotate(0, 0, Angle);
+        transform.Rotate(0, 0, Angle - 140);
     }
 }

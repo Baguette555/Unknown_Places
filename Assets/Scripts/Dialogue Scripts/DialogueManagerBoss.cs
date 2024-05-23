@@ -6,16 +6,18 @@ using TMPro;
 using Unity.VisualScripting;
 using System.Runtime.CompilerServices;
 
-public class DialogueManager : MonoBehaviour
+public class DialogueManagerBoss : MonoBehaviour
 {
-    public DialogueTrigger DialogueTrigger;
+    public DialogueTriggerBoss DialogueTriggerBoss;
     public Animator animator;
     public TMP_Text nameText;
     public TMP_Text DialogueText;
     private Queue<string> sentences;
 
     public PauseMenu pauseMenu;
-    public static DialogueManager instance;
+    public static DialogueManagerBoss instance;
+
+    [SerializeField] GameObject Gamehost, TriggerBox, DoorTrigger;  // The Gamehost and its Trigger, + the door trigger
 
     private void Awake()
     {
@@ -64,10 +66,14 @@ public class DialogueManager : MonoBehaviour
     }
     public void EndDialogue()
     {
-        //chrono.TimerPaused();
         pauseMenu.EnablePlayerInputs();
         animator.SetBool("IsOpen", false);
-        DialogueTrigger.dialogueUI.SetActive(false);
-        DialogueTrigger.dialogueStarted = false;
+        DialogueTriggerBoss.dialogueUI.SetActive(false);
+        DialogueTriggerBoss.dialogueStarted = false;
+
+        Gamehost.SetActive(false);
+        TriggerBox.SetActive(false);
+
+        DoorTrigger.SetActive(true);
     }
 }

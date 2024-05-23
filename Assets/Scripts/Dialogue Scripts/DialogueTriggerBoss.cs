@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class DialogueTrigger : MonoBehaviour
+public class DialogueTriggerBoss : MonoBehaviour
 {
     public Dialogue dialogue;
-    public DialogueManager dialogueManager;
-    public GameObject dialogueTrigger;
+    public DialogueManagerBoss dialogueManagerBoss;
+    public GameObject dialogueTriggerBoss;
     public GameObject dialogueUI;
 
     public PauseMenu pauseMenu; // Used to disable/enable player's input
@@ -58,7 +58,7 @@ public class DialogueTrigger : MonoBehaviour
                 }
                 else
                 {
-                    dialogueManager.DisplayNextSentences();
+                    dialogueManagerBoss.DisplayNextSentences();
                 }
             }
         }
@@ -66,10 +66,10 @@ public class DialogueTrigger : MonoBehaviour
     void TriggerDialogue()
     {
         dialogueStarted = true;
-        if (dialogueTrigger.CompareTag("DialogueTrigger"))
+        if (dialogueTriggerBoss.CompareTag("DialogueTrigger"))
         {
-            dialogueManager.animator.SetBool("IsOpen", true);
+            dialogueManagerBoss.animator.SetBool("IsOpen", true);
         }
-        DialogueManager.instance.StartDialogue(dialogue);
+        DialogueManagerBoss.instance.StartDialogue(dialogue);
     }
 }

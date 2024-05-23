@@ -23,5 +23,9 @@ public class DestroyChronoOnLevelLoad : MonoBehaviour
         {
             Destroy(GameObject.Find("### PermaUI_CH01_LV02 ###"));    // UI used for chrono
         }
+        if (sceneName == "SCN_CH02_LV02")
+        {
+            Destroy(GameObject.Find("### PermaUI_CH02_LV01 ###"));    // UI used for chrono
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using Unity.VisualScripting;
+using TMPro;
 
 public class HealthManager : MonoBehaviour
 {
@@ -21,7 +22,9 @@ public class HealthManager : MonoBehaviour
     public discordManager discordManager;
     public NewControls NewControls;
 
-    private int deaths; // Will maybe be used, or not, but I'll keep it there.
+    private bool deathAdded = false;
+    private int deaths;
+    [SerializeField] TextMeshProUGUI deathCounter;
 
 
     private void Awake()
@@ -78,8 +81,13 @@ public class HealthManager : MonoBehaviour
 
     IEnumerator deathRespawn()
     {
+        if (deathAdded == false)
+        {
+            deaths = deaths + 1;
+            deathAdded = true;
+        }
         Debug.Log("Player died");
-        deaths++;
+        deathCounter.text = "Death N°" + deaths;
         NewControls.speed = 0f;
         deathTransition.SetBool("ded", true);
 
@@ -88,6 +96,7 @@ public class HealthManager : MonoBehaviour
         spawnPoint.RespawnToSpawnPoint();
         yield return new WaitForSeconds(0.5f);
         NewControls.speed = 8f;
+        deathAdded = false;
 
         deathTransition.SetBool("ded", false);
     }
