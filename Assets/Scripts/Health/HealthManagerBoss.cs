@@ -16,7 +16,7 @@ public class HealthManagerBoss : MonoBehaviour
     [SerializeField] Sprite hearts2;
     [SerializeField] Sprite hearts3;
 
-    public discordManager discordManager;
+    public discordManagerBoss discordManager;
 
     private void Awake()
     {

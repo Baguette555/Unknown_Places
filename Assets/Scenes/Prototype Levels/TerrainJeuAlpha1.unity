@@ -120910,6 +120910,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: '### CANVAS ###'
       objectReference: {fileID: 0}
+    - target: {fileID: 2418554664462457600, guid: 56116feb301560a449d4e2156f29951b,
+        type: 3}
+      propertyPath: NewControls
+      value: 
+      objectReference: {fileID: 388092519}
+    - target: {fileID: 2418554664462457600, guid: 56116feb301560a449d4e2156f29951b,
+        type: 3}
+      propertyPath: deathTransition
+      value: 
+      objectReference: {fileID: 1495671207}
     - target: {fileID: 7619494606031080959, guid: 56116feb301560a449d4e2156f29951b,
         type: 3}
       propertyPath: m_LocalPosition.x

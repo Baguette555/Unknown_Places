@@ -17,7 +17,7 @@ public class DialogueManagerBoss : MonoBehaviour
     public PauseMenu pauseMenu;
     public static DialogueManagerBoss instance;
 
-    [SerializeField] GameObject Gamehost, TriggerBox, DoorTrigger;  // The Gamehost and its Trigger, + the door trigger
+    [SerializeField] GameObject Gamehost, TriggerBox, DoorTrigger, UIdashUnlocked;  // The Gamehost and its Trigger, + the door trigger
 
     private void Awake()
     {
@@ -75,5 +75,6 @@ public class DialogueManagerBoss : MonoBehaviour
         TriggerBox.SetActive(false);
 
         DoorTrigger.SetActive(true);
+        UIdashUnlocked.SetActive(true);
     }
 }
