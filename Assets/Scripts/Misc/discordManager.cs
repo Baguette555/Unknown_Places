@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,19 +8,14 @@ public class discordManager : MonoBehaviour
     public PauseMenu pauseMenu;
     public HealthManager healthManager;
 
-    private int lastLevelInt = -1; // Détecter les changements de niveau pour drp
-    private int lastHealth = -1; // Détecter les changements de vie pour drp
+    private int lastLevelInt = -1; // Detects the level & health for DRP
+    private int lastHealth = -1;
 
     private int frameCounter = 0;
 
-    /*private void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);     // Ne marche pas : Reload la scène à l'infini
-    }*/
-
     void Start()
     {
-        discord = new Discord.Discord(1233671946621943839, (ulong)Discord.CreateFlags.NoRequireDiscord);
+        discord = new Discord.Discord(1233671946621943839, (ulong)Discord.CreateFlags.NoRequireDiscord);    // Connects to the Discord's game UID created
         SceneManager.sceneLoaded += OnSceneLoaded;
         ChangeActivity();
     }

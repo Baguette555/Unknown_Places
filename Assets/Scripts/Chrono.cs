@@ -1,15 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Chrono : MonoBehaviour
 {
-    [SerializeField] public float timeValue = 0;
+    [SerializeField] float timeValue = 0;
     [SerializeField] TextMeshProUGUI TimeText;
-    public bool timePaused = false;
+    [SerializeField] bool timePaused = false;
 
     private void Start()
     {
