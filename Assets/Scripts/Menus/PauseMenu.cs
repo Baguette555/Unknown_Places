@@ -3,12 +3,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.InputSystem;
-using UnityEngine.XR;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public bool isPaused = false; // For other scripts
+    public bool canPause = true;
 
     [Header("Menus UIs")]
     public GameObject pauseMenuUI;      // Pause Menu
@@ -36,9 +36,7 @@ public class PauseMenu : MonoBehaviour
     [Header("Transition du rideau")]
     public Animator rideauUI;
 
-    //[SerializeField] string[] Intermissions;      Au cas où il faudrait stocker toutes les scènes d'intermissions pour aller + vite ce sera là sinon ce sera tout écrit un à un vive l'optimisation (utiliser arrays ou strings,??)
-
-    void Awake()
+    void Awake()    // Reduce this part for better visibility. Awake() is used for Pause & Discord only.
     {
         Scene currentScene = SceneManager.GetActiveScene();
         int sceneBuildIndex = currentScene.buildIndex;
@@ -46,31 +44,31 @@ public class PauseMenu : MonoBehaviour
         Debug.Log(sceneName + sceneBuildIndex);
 
 
-        // ====================================================== TITRE DU NIVEAU DU MENU PAUSE & AFFICHAGE NIVEAU DRP
-        // ================================================== Tout est rangé dans l'ordre d'apparition des niveaux en jeu.
-        if (sceneName == "TerrainJeuAlpha1")
+        // ====================================================== LEVEL NAMING ON PAUSE + ON DISCORD RICH PRESENCE
+        // ================================================== Will be shown when pausing the game and on the Discord's profile.
+        // ================================================== Sorted by level appereance in game.
+        if (sceneName == "SCN_TutoLevel1")
         {
-            levelText.text = "Chapitre 1 - Niveau 1";
-            levelTxt = "1"; // Ce qui sera affiché sur Discord sous le format : "Niveau (levelTxt)"
-            chapterInt = 1;
-            //levelInt = 1;
+            levelText.text = "Chapitre 0 - Introduction";   // The text that will be shown in the Pause Menu.
+            levelTxt = "d'introduction";                    // Will be shown in Discord in this form: "Niveau (levelTxt)"
+            chapterInt = 0;                                 // Will be shown in Discord in this form: "Chapitre (chapterInt)"
         }
-        else if (sceneName == "SCN_TutoLevel1") // Tuto avant le jeu
-        {
-            levelText.text = "Chapitre 0 - Introduction";
-            levelTxt = "d'introduction";
-            chapterInt = 0;
-        }
-        else if (sceneName == "SCN_Intermission01_01") // SCN_Intermission[Chapitre]_[Numéro]
+        else if (sceneName == "SCN_Intermission1") // SCN_Intermission[NuméroX]
         {
             levelText.text = "Chapitre 1 - Avant-Jeu";
-            levelTxt = "d'intermission 0";
-            chapterInt = 0;
+            levelTxt = "d'intermission 1";
+            chapterInt = 1;
         }
-        else if (sceneName == "SCN_C01_L01")    // SCN_C[Chapitre]_L[Niveau]
+        else if (sceneName == "SCN_C01_L01")    // SCN_C[Chapitre0X]_L[Niveau0X]
         {
             levelText.text = "Chapitre 1 - Niveau 1";
             levelTxt = "1";
+            chapterInt = 1;
+        }
+        else if (sceneName == "SCN_Intermission2")
+        {
+            levelText.text = "Chapitre 1 - Intermission 2";
+            levelTxt = "d'intermission 2";
             chapterInt = 1;
         }
         else if (sceneName == "SCN_C01_L02")
@@ -79,19 +77,13 @@ public class PauseMenu : MonoBehaviour
             levelTxt = "2";
             chapterInt = 1;
         }
-        else if (sceneName == "SCN_TestGrandNiveau") //|| sceneBuildIndex == 3)
+        else if (sceneName == "SCN_Intermission3")
         {
-            levelText.text = "Chapitre 1 - Niveau 2";
-            levelTxt = "2";
-            chapterInt = 1;
+            levelText.text = "Chapitre 2 - Intermission 1";
+            levelTxt = "d'intermission 3";
+            chapterInt = 2;
         }
-        else if (sceneName == "SCN_Intermission1")
-        {
-            levelText.text = "Chapitre 1 - Intermission 1";
-            levelTxt = "Intermission 1";
-            chapterInt = 1;
-        }
-        else if (sceneName == "SCN_TestBottes")
+        else if (sceneName == "SCN_C02_L01")
         {
             levelText.text = "Chapitre 2 - Niveau 1";
             levelTxt = "1";
@@ -100,7 +92,7 @@ public class PauseMenu : MonoBehaviour
         else if (sceneName == "SCN_CoursePoursuite")
         {
             levelText.text = "Chapitre 4 - Couloir";
-            levelTxt = "4";
+            levelTxt = "3";
             chapterInt = 4;
         }
         else
@@ -115,13 +107,14 @@ public class PauseMenu : MonoBehaviour
 
     public void DisablePlayerInputs()
     {
-        newControls.speed = 0f;
         newControls.canFlip = false;
         newControls.canDash = false;
         newControls.canMove = false;
         newControls.canJump = false;
+        canPause = false;
 
-        //var playerActionMap = inputActions.FindActionMap("Player");
+        newControls.speed = 0f;
+        //var playerActionMap = inputActions.FindActionMap("Player");           // too laggy to test this out. Booleans works better for now.
         //playerActionMap.Disable();
         Debug.Log("Player inputs disabled");
     }
@@ -132,27 +125,32 @@ public class PauseMenu : MonoBehaviour
         newControls.canDash = true;
         newControls.canMove = true;
         newControls.canJump = true;
+        canPause = true;
+
         newControls.speed = 8f;
         //var playerActionMap = inputActions.FindActionMap("Player");
         //playerActionMap.Enable();
         Debug.Log("Player inputs enabled");
     }
 
-    public void Pause(InputAction.CallbackContext context)                   // ======================== PAUSING [NEW]
+    public void Pause(InputAction.CallbackContext context)                   // ======================== PAUSING [NewInputSystem]
     {
-        if(GameIsPaused == false)
+        if (canPause == true)
         {
-            rideauUI.SetBool("Paused", true);           // Anim rideau
-            DisablePlayerInputs();
-            isPaused = true;
-            Pause();
-        }
-        else
-        {
-            Resume();
-            isPaused = false;
-            rideauUI.SetBool("Resumed", true);
-            EnablePlayerInputs();
+            if (GameIsPaused == false)
+            {
+                rideauUI.SetBool("Paused", true);           // A curtain animation should start when pausing. This is only a placeholder.
+                DisablePlayerInputs();
+                isPaused = true;
+                Pause();
+            }
+            else
+            {
+                Resume();
+                isPaused = false;
+                rideauUI.SetBool("Resumed", true);
+                EnablePlayerInputs();
+            }
         }
     }
 
@@ -161,7 +159,7 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
         EnablePlayerInputs();
         gameUI.SetActive(true);
-        //Chrono.TimerPaused();     Ne m'en sers pas : reste quand-même ici au cas où.
+        //Chrono.TimerPaused();     Not used for now, but stays here just in case.
 
         pauseMenuUI.SetActive(false);
         confMenuBox.SetActive(false);

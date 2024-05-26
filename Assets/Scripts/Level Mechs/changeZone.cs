@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class changeZone : MonoBehaviour
 {
@@ -15,14 +11,6 @@ public class changeZone : MonoBehaviour
         {
             levelChrono.PauseTimer();
             levelLoader.LoadNextLevel();
-            //SceneManager.LoadScene("SCN_TestGrandNiveau");
         }
     }
 }
-
-
-
-
-// Quand je touche le collider, je change le niveau
-// Je mets également le temps à -- Time.deltaTime
-// Stocke la valeur qqpart

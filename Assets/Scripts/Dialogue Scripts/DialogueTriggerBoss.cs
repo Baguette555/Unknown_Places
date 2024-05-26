@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class DialogueTriggerBoss : MonoBehaviour
 {
@@ -52,6 +49,7 @@ public class DialogueTriggerBoss : MonoBehaviour
             {
                 if (dialogueStarted == false)
                 {
+                    pauseMenu.canPause = false;
                     pauseMenu.DisablePlayerInputs();
                     dialogueUI.SetActive(true);
                     TriggerDialogue();

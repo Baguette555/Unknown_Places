@@ -1,10 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
-using Unity.VisualScripting;
-using System.Runtime.CompilerServices;
 
 public class DialogueManagerBoss : MonoBehaviour
 {
@@ -26,7 +23,7 @@ public class DialogueManagerBoss : MonoBehaviour
     }
     public void StartDialogue(Dialogue dialogue)
     {
-        //chrono.TimerPaused();     Ne m'en sers pas : reste quand-même ici au cas où.
+        //chrono.TimerPaused();     Not used, but stays here just in case.
         pauseMenu.DisablePlayerInputs();
         animator.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
@@ -66,7 +63,7 @@ public class DialogueManagerBoss : MonoBehaviour
     }
     public void EndDialogue()
     {
-        pauseMenu.EnablePlayerInputs();
+        //pauseMenu.EnablePlayerInputs();
         animator.SetBool("IsOpen", false);
         DialogueTriggerBoss.dialogueUI.SetActive(false);
         DialogueTriggerBoss.dialogueStarted = false;

@@ -1,10 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
-using Unity.VisualScripting;
-using System.Runtime.CompilerServices;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -24,7 +21,6 @@ public class DialogueManager : MonoBehaviour
     }
     public void StartDialogue(Dialogue dialogue)
     {
-        //chrono.TimerPaused();     Ne m'en sers pas : reste quand-même ici au cas où.
         pauseMenu.DisablePlayerInputs();
         animator.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
@@ -64,7 +60,6 @@ public class DialogueManager : MonoBehaviour
     }
     public void EndDialogue()
     {
-        //chrono.TimerPaused();
         pauseMenu.EnablePlayerInputs();
         animator.SetBool("IsOpen", false);
         DialogueTrigger.dialogueUI.SetActive(false);

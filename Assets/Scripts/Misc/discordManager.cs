@@ -65,9 +65,9 @@ public class discordManager : MonoBehaviour
         ChangeActivity();
     }
 
-    void Update()
+    void Update()   // No need to update it every frame, call some Callbacks from time to time
     {
-        if (frameCounter % 10 == 0)
+        if (frameCounter % 20 == 0)
         {
             discord.RunCallbacks();
         }

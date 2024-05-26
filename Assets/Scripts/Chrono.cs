@@ -22,7 +22,7 @@ public class Chrono : MonoBehaviour
         else
         {
             // The timer used to not pause during gameplay, but since it breaks everything I'll stop the timer when paused.
-            // It was for players that uses the pause menu to see the level before playing it.
+            // It was intended for players that uses the pause menu to see the level before playing it.
         }
     }
 

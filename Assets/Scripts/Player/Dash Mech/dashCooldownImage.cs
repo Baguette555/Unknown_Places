@@ -1,11 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.InputSystem;
-using System.Threading;
-using UnityEngine.Rendering.UI;
 
 public class dashCooldownImage : MonoBehaviour
 {
@@ -15,7 +11,7 @@ public class dashCooldownImage : MonoBehaviour
     [SerializeField] bool dashReady = true;
     float currentValue;
 
-    // ======================== INITIALISATION DES COULEURS DES IMAGES ========================
+    // =================== INITIALIZATION OF THE COLORS FOR THE IMAGE & TEXT ==================
     private void Awake()
     {
         dashReady = true;
@@ -24,16 +20,14 @@ public class dashCooldownImage : MonoBehaviour
     }
     // ========================================================================================
 
-    // ========================== DETECTION DU L.SHIFT POUR COOLDOWN ==========================                 // UPDATE: FAIRE EN SORTE DE DEMARRER CA EN MEME TEMPS DU LSHIFT DANS NEWCONTROLS!! PAS BESOIN DE METTRE DEUX FOIS CALLBACK CONTEXT!!!
-
+    // ============================ KEYBINDS DETECTION FOR COOLDOWN ===========================
     public void DashImage()
     {
         StartCoroutine(Cooldown());
     }
-
     // ========================================================================================
 
-    // ============================ COUROUTINE DU COOLDOWN ============================
+    // =========================== COUROUTINE FOR COOLDOWN ============================
     IEnumerator Cooldown()
     {
         dashReady = false;
@@ -45,10 +39,10 @@ public class dashCooldownImage : MonoBehaviour
 
         while (currentValue < 100) // If timer less than 100 (not fully completed),
         {
-            currentValue += speed * Time.deltaTime / 1.0f;    // Refill the timer as time passes
-            text.text = ((int)currentValue).ToString() + "%";   // And add % purely decorative
-            image.fillAmount = currentValue / 100;          // So the images fills more and more
-            yield return null;              // idfk what this does
+            currentValue += speed * Time.deltaTime / 1.0f;      // Refill the timer as time passes
+            text.text = ((int)currentValue).ToString() + "%";   // And the % is purely decorative
+            image.fillAmount = currentValue / 100;              // So the images fills more and more
+            yield return null;
         }
         dashReady = true;
         text.text = "PRET";
@@ -63,24 +57,6 @@ public class dashCooldownImage : MonoBehaviour
         currentValue = 0;
         image.color = new Color(0, 255, 0, 0f);
         text.color = new Color(255, 255, 255, 0f);
-
-        /*if (currentValue < 100)
-        {
-            text.color = new Color(255, 255, 255, 1f);
-            image.color = new Color(0, 255, 0, 1f);
-            currentValue += speed * Time.deltaTime;
-            text.text = ((int)currentValue).ToString() + "%";
-        }
-        else
-        {
-            text.text = "PRET !";
-            currentValue = 0;
-            yield return new WaitForSeconds(0.3f);
-            image.color = new Color(0, 255, 0, 0f);
-            text.color = new Color(255, 255, 255, 0f);
-
-        }
-        image.fillAmount = currentValue / 100;*/
     }
     // ================================================================================
 }

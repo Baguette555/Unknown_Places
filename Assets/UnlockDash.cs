@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UnlockDash : MonoBehaviour
@@ -9,6 +7,6 @@ public class UnlockDash : MonoBehaviour
     public void DashUnlocked()
     {
         NewControls.isAbleToDash = true;
-        NewControls.canDash = true;
+        NewControls.canDash = false;    // Will be reactivated once the pop-up is closed.
     }
 }

@@ -1,6 +1,4 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -9,7 +7,7 @@ public class Hold2Skip : MonoBehaviour
     [SerializeField] Animator textAnimator;
     [SerializeField] Image holdToSkipImage;
     [SerializeField] Image progressCircleImage;
-    [SerializeField] float holdTime = 2f; // Temps en secondes pour atteindre 100%
+    [SerializeField] float holdTime = 2f; // Time in seconds to be at 100%
     [SerializeField] float fillSpeed = 1f;
     [SerializeField] float alphaSpeed = 1f;
     [SerializeField] bool isHolding = false;
@@ -28,7 +26,7 @@ public class Hold2Skip : MonoBehaviour
         if (isHolding)
         {
             float holdDuration = Time.time - holdStartTime;
-            float progress = Mathf.Clamp01(holdDuration / holdTime); // Progression entre 0 et 100%
+            float progress = Mathf.Clamp01(holdDuration / holdTime); // Progress between 0 and 100%
             progressCircleImage.fillAmount = progress;
 
             SetAlphaAndFill(progress);
@@ -52,7 +50,7 @@ public class Hold2Skip : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.F))            // Fonctionne bien avec le clavier...
+        if (Input.GetKeyDown(KeyCode.F))            // Works well with keyboard...
         {
             textAnimator.enabled = false;
             isHolding = true;
@@ -64,7 +62,7 @@ public class Hold2Skip : MonoBehaviour
         }
     }
 
-    public void HoldToSkip(InputAction.CallbackContext context) // ... Mais pas à la manette ; sera travaillé plus tard
+    public void HoldToSkip(InputAction.CallbackContext context) // ... But not with the controller; will be worked later(?)
     {
         if(context.performed)
         {
@@ -78,7 +76,7 @@ public class Hold2Skip : MonoBehaviour
         }
     }
 
-    void SetAlphaAndFill(float alpha)   // Modifie l'alpha et le remplissage du cercle et du texte
+    void SetAlphaAndFill(float alpha)   // Fill circle and its alpha with its text
     {
         Color textColor = holdToSkipImage.color;
         textColor.a = alpha;

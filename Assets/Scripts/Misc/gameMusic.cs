@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class gameMusic : MonoBehaviour
@@ -13,5 +11,4 @@ public class gameMusic : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
     }
-
 }
