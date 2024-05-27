@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/INTERMISSIONS/SCN_Intermission3.unity
     guid: 5b2a45362bd907c419bcc5e66bd06f4b
   - enabled: 1
+    path: Assets/Scenes/NIVEAUX/CHAPITRE 2/SCN_C02_L01.unity
+    guid: 3b9565d084764c745b1b2e3a0394313e
+  - enabled: 1
     path: Assets/Scenes/Prototype Levels/TerrainJeuAlpha1.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 0

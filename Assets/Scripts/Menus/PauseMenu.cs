@@ -142,6 +142,7 @@ public class PauseMenu : MonoBehaviour
                 rideauUI.SetBool("Paused", true);           // A curtain animation should start when pausing. This is only a placeholder.
                 DisablePlayerInputs();
                 isPaused = true;
+                canPause = true;
                 Pause();
             }
             else

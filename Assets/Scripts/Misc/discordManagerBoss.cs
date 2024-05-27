@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,15 +8,10 @@ public class discordManagerBoss : MonoBehaviour
     public PauseMenu pauseMenu;
     public HealthManagerBoss healthManagerBoss;
 
-    private int lastLevelInt = -1; // Détecter les changements de niveau pour drp
-    private int lastHealth = -1; // Détecter les changements de vie pour drp
+    private int lastLevelInt = -1;
+    private int lastHealth = -1;
 
     private int frameCounter = 0;
-
-    /*private void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);     // Ne marche pas : Reload la scène à l'infini
-    }*/
 
     void Start()
     {

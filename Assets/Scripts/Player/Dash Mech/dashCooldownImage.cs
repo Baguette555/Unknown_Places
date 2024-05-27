@@ -40,7 +40,7 @@ public class dashCooldownImage : MonoBehaviour
         while (currentValue < 100) // If timer less than 100 (not fully completed),
         {
             currentValue += speed * Time.deltaTime / 1.0f;      // Refill the timer as time passes
-            text.text = ((int)currentValue).ToString() + "%";   // And the % is purely decorative
+            text.text = ((int)currentValue).ToString();// + "%";   // 0 to 100 charge, the % is purely decorative
             image.fillAmount = currentValue / 100;              // So the images fills more and more
             yield return null;
         }
