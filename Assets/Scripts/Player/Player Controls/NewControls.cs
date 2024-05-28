@@ -1,12 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
 
 public class NewControls : MonoBehaviour
 {

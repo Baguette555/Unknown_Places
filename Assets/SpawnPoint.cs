@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
+    public FallingPlatform FallingPlatform;
+
     [SerializeField] GameObject Player;
      
     [SerializeField] private float spawnPoint_y;
@@ -22,6 +24,7 @@ public class SpawnPoint : MonoBehaviour
 
     public void RespawnToSpawnPoint()
     {
+        FallingPlatform.PlatformReset();
         Player.transform.position = respawnPoint;
     }
 }
