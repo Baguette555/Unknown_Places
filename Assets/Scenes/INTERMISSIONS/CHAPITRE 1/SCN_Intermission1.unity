@@ -657,10 +657,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aafc480a4a34dfc4b9d88a6224ca3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Platform: {fileID: 0}
   fallSpeed: 1
   riseSpeed: 1
   isRising: 0
   playerOnPlatform: 0
+  sound: {fileID: 0}
+  soundPlayed: 0
 --- !u!212 &127016778
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3187,7 +3190,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1013694481}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 87446f095366f7b4396c710a9ecb61a6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

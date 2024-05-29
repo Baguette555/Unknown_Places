@@ -94,12 +94,13 @@ public class NewControls : MonoBehaviour
         {
             Debug.Log("Bottes actives. Lancer une anim.");
             // Démarrer animation des bottes ?
-            // Particules permanantes pour les bottes : faire comprendre que les bottes brillent
+            // Particules permanantes pour les bottes : faire comprendre que les bottes brillent: Changer sprites ?
         }
     }
 
     void Update()
     {
+        //Debug.Log("Y VELOCITY : " + rb.velocity.y);
         waitTime = Time.deltaTime;
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
         if(isDashing)
