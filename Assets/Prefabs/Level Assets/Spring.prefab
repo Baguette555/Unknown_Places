@@ -222,6 +222,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BounceTrigger: {fileID: 6068170593226652187}
-  bounce: 10
+  bounce: 15
   newControls: {fileID: 511114176607201602, guid: bf52058bb0834a147afb3bee594d7fdd,
     type: 3}
