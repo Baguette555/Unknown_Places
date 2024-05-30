@@ -50,7 +50,7 @@ public class NewControls : MonoBehaviour
 
     [Header("Boots properties")]
     public bool hasBoots = false;
-    // Activer un particle machin pour les bottes. à voir plus tard ofc
+    // Activer un particle machin pour les bottes. à voir plus tard ofc (Icône pour le moment)
 
     [Header("Script de l'image de cooldown.")]
     public dashCooldownImage dashCooldownImage;

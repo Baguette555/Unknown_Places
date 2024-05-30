@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,5 +25,16 @@ public class DestroyChronoOnLevelLoad : MonoBehaviour
         {
             Destroy(GameObject.Find("### PermaUI_CH02_LV01 ###"));    // UI used for chrono
         }
+        if (sceneName == "SCN_CH03_LV01")
+        {
+            Destroy(GameObject.Find("### PermaUI_CH02_LV02 ###"));    // UI used for chrono
+        }
+        if (sceneName == "SCN_CH04_LV01")
+        {
+            Destroy(GameObject.Find("### PermaUI_CH03_LV01 ###"));    // UI used for chrono
+        }
+        // After the 3rd chapter, the level time will not show because the character is not on stage anymore.
+        // So only the global time will be shown for the player to see their progress.
+        // ===============================================================================================================
     }
 }

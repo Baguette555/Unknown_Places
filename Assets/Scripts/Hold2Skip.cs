@@ -62,7 +62,7 @@ public class Hold2Skip : MonoBehaviour
         }
     }
 
-    public void HoldToSkip(InputAction.CallbackContext context) // ... But not with the controller; will be worked later(?)
+    public void HoldToSkip(InputAction.CallbackContext context) // ... Cannot hold with the controller for some reason
     {
         if(context.performed)
         {

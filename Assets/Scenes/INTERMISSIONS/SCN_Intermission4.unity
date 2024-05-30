@@ -1612,7 +1612,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1864,7 +1864,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   speed: 8
-  jumpForce: 9
+  jumpForce: 13.5
   playerAnimator: {fileID: 388092520}
   isAbleToDash: 1
   isDashing: 0

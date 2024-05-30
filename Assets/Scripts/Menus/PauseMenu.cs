@@ -89,10 +89,34 @@ public class PauseMenu : MonoBehaviour
             levelTxt = "1";
             chapterInt = 2;
         }
+        else if (sceneName == "SCN_Intermission4")
+        {
+            levelText.text = "Chapitre 2 - Intermission 2";
+            levelTxt = "d'intermission 4";
+            chapterInt = 2;
+        }
+        else if (sceneName == "SCN_C03_L01")
+        {
+            levelText.text = "Chapitre 3 - Niveau 1";
+            levelTxt = "1";
+            chapterInt = 3;
+        }
+        else if (sceneName == "SCN_Intermission5")
+        {
+            levelText.text = "Chapitre 3 - Intermission 1";
+            levelTxt = "d'intermission 5";
+            chapterInt = 3;
+        }
+        else if (sceneName == "SCN_C04_L01")
+        {
+            levelText.text = "Chapitre 4 - Backstage";
+            levelTxt = "1";
+            chapterInt = 4;
+        }
         else if (sceneName == "SCN_CoursePoursuite")
         {
             levelText.text = "Chapitre 4 - Couloir";
-            levelTxt = "3";
+            levelTxt = "Run!";
             chapterInt = 4;
         }
         else
