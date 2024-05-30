@@ -39,6 +39,14 @@ public class DontDestroyOnLoad : MonoBehaviour
         {
             Destroy(GameObject.Find("### PermaUI_CH02_LV01 ###"));
         }
+        if (sceneBuildIndex == 12)
+        {
+            Destroy(GameObject.Find("### PermaUI_CH02_LV02 ###"));
+        }
+        if (sceneBuildIndex == 14)
+        {
+            Destroy(GameObject.Find("### PermaUI_CH03_LV01 ###"));
+        }
         // =====================================================================================
     }
 }

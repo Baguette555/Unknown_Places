@@ -27,13 +27,13 @@ EditorBuildSettings:
     path: Assets/Scenes/NIVEAUX/CHAPITRE 1/SCN_C01_L02.unity
     guid: 1b2282f3be7a0a74892223f83193c520
   - enabled: 1
-    path: Assets/Scenes/INTERMISSIONS/SCN_Intermission3.unity
+    path: Assets/Scenes/INTERMISSIONS/CHAPITRE 2/SCN_Intermission3.unity
     guid: 5b2a45362bd907c419bcc5e66bd06f4b
   - enabled: 1
     path: Assets/Scenes/NIVEAUX/CHAPITRE 2/SCN_C02_L01.unity
     guid: 3b9565d084764c745b1b2e3a0394313e
   - enabled: 1
-    path: Assets/Scenes/INTERMISSIONS/SCN_Intermission4.unity
+    path: Assets/Scenes/INTERMISSIONS/CHAPITRE 2/SCN_Intermission4.unity
     guid: adb0d4517d4e6004ca0494ee511a4f09
   - enabled: 1
     path: Assets/Scenes/NIVEAUX/CHAPITRE 2/SCN_C02_L02.unity
@@ -41,12 +41,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/INTERMISSIONS/SCN_Intermission5.unity
     guid: d8383c21019269844a30cc7c2e42ba8f
+  - enabled: 1
+    path: Assets/Scenes/NIVEAUX/SCN_C03_L01.unity
+    guid: fe7d492a3e6204b46866184e24d170d9
+  - enabled: 1
+    path: Assets/Scenes/INTERMISSIONS/SCN_Intermission6.unity
+    guid: de42048c212cdde40aad401abeb1be12
   - enabled: 0
     path: Assets/Scenes/Prototype Levels/TerrainJeuAlpha1.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
-    path: Assets/Scenes/Prototype Levels/SCN_TestGrandNiveau.unity
-    guid: b7fbbe8adc8232f40889170ed7b8e225
   - enabled: 0
     path: Assets/Scenes/Prototype Levels/SCN_TestBottes.unity
     guid: 8e400beb9a2f8664b86701b4576ce247

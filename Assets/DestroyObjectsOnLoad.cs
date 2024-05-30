@@ -3,7 +3,7 @@ using UnityEngine;
 public class DestroyObjectsOnLoad : MonoBehaviour
 {
     // Used to destroy everything that need to be destroyed when restarting the game / going back to main menu.
-    void Start()
+    void Update()   // Using Start will not work.
     {
         Destroy(GameObject.Find("### PermaUI ###"));              // UI used for total time chrono
 

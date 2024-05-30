@@ -63,7 +63,7 @@ public class FallingPlatform : MonoBehaviour
             StartCoroutine(RisePlatform());
         }
 
-        if (rb.velocity.y > 1f)
+        if (rb.velocity.y > riseSpeed + 0.5f)
         {
             if (soundPlayed == false)
             {

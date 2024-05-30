@@ -16,6 +16,12 @@ public class mainMenu : MonoBehaviour
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
+    public void Credits()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 14);  // buildIndex 15 = Crédits
+        Debug.Log("Démarrer scène crédits");
+    }
+
     IEnumerator LoadLevel(int levelIndex)
     {
         levelLoader.transition.SetTrigger("MenuStart");

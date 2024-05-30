@@ -7,6 +7,9 @@ using UnityEngine.UIElements;
 public class controllerOptions : MonoBehaviour
 {
     public GameObject Panel;    // Settings options
+    public GameObject MenuPanel;
+    public GameObject QuitPanel;
+
     bool visible = false;
 
     public AudioSource audiosource; // Global Music audio manager
@@ -50,12 +53,27 @@ public class controllerOptions : MonoBehaviour
         }
     }
 
+    // =====================================================================
+    // ========================= OPEN PANELS ===============================
     public void OpenOptionsPanel()
     {
         visible = true;
         Panel.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
     }
+    public void OpenMenuPanel()
+    {
+        visible = true;
+        MenuPanel.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+    public void OpenQuitPanel()
+    {
+        visible = true;
+        QuitPanel.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+    // =====================================================================
 
     public void RestoreOriginalFocus()
     {
@@ -65,6 +83,8 @@ public class controllerOptions : MonoBehaviour
         }
     }
 
+    // =====================================================================
+    // ======================= SLIDERS USED FOR VOLUME =====================
     public void SliderChange()
     {
         audiosource.volume = SliderV.value;
@@ -76,4 +96,5 @@ public class controllerOptions : MonoBehaviour
         SFX.volume = SliderSFX.value;
         TxtSFX.text = "SFX " + (SFX.volume * 100).ToString("0") + "%";
     }
+    // =====================================================================
 }
