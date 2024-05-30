@@ -90,7 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67476a00ff215a4d96615b2630f921b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newControls: {fileID: 0}
+  newControls: {fileID: 511114176607201602, guid: bf52058bb0834a147afb3bee594d7fdd,
+    type: 3}
   specialWallCollider: {fileID: 0}
 --- !u!1 &6640203530196290663
 GameObject:

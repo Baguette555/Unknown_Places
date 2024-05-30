@@ -35,7 +35,7 @@ public class DontDestroyOnLoad : MonoBehaviour
         {
             Destroy(GameObject.Find("### PermaUI_CH01_LV02 ###"));
         }
-        if (sceneName == "SCN_CH02_LV02") // 10 ?
+        if (sceneBuildIndex == 10)
         {
             Destroy(GameObject.Find("### PermaUI_CH02_LV01 ###"));
         }

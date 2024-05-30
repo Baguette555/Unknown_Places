@@ -117753,9 +117753,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnlockDash, Assembly-CSharp
-        m_MethodName: DashUnlocked
+      - m_Target: {fileID: 423148578}
+        m_TargetAssemblyTypeName: UnlockBoots, Assembly-CSharp
+        m_MethodName: BootsUnlocked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -117859,7 +117859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c3bf656e2957824a9c228a8351e941b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NewControls: {fileID: 0}
+  NewControls: {fileID: 388092519}
 --- !u!1 &457470919
 GameObject:
   m_ObjectHideFlags: 0
@@ -119206,12 +119206,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6791885313757233589, guid: e7278d2e8abe28d48a7a1c9e9bbb4f40,
     type: 3}
   m_PrefabInstance: {fileID: 654471398}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &700252966 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7208527295537118969, guid: 62f748eeaf843d140b5315efe3f3c1d0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1270327388}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &703509619
 PrefabInstance:
@@ -121608,84 +121602,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SingleSpike (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 8009703055529467207, guid: 62f748eeaf843d140b5315efe3f3c1d0,
-        type: 3}
-      propertyPath: healthManager
-      value: 
-      objectReference: {fileID: 1749861548}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 62f748eeaf843d140b5315efe3f3c1d0, type: 3}
---- !u!1001 &1270327388
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3840971264955051147, guid: 62f748eeaf843d140b5315efe3f3c1d0,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 145.345
-      objectReference: {fileID: 0}
-    - target: {fileID: 3840971264955051147, guid: 62f748eeaf843d140b5315efe3f3c1d0,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.2952442
-      objectReference: {fileID: 0}
-    - target: {fileID: 3840971264955051147, guid: 62f748eeaf843d140b5315efe3f3c1d0,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3840971264955051147, guid: 62f748eeaf843d140b5315efe3f3c1d0,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9999225
-      objectReference: {fileID: 0}
-    - target: {fileID: 3840971264955051147, guid: 62f748eeaf843d140b5315efe3f3c1d0,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3840971264955051147, guid: 62f748eeaf843d140b5315efe3f3c1d0,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3840971264955051147, guid: 62f748eeaf843d140b5315efe3f3c1d0,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.012448479
-      objectReference: {fileID: 0}
-    - target: {fileID: 3840971264955051147, guid: 62f748eeaf843d140b5315efe3f3c1d0,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3840971264955051147, guid: 62f748eeaf843d140b5315efe3f3c1d0,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3840971264955051147, guid: 62f748eeaf843d140b5315efe3f3c1d0,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 1.427
-      objectReference: {fileID: 0}
-    - target: {fileID: 7208527295537118969, guid: 62f748eeaf843d140b5315efe3f3c1d0,
-        type: 3}
-      propertyPath: m_Name
-      value: SingleSpike (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8009703055529467207, guid: 62f748eeaf843d140b5315efe3f3c1d0,
-        type: 3}
-      propertyPath: ennemy
-      value: 
-      objectReference: {fileID: 700252966}
     - target: {fileID: 8009703055529467207, guid: 62f748eeaf843d140b5315efe3f3c1d0,
         type: 3}
       propertyPath: healthManager
@@ -125686,4 +125602,3 @@ SceneRoots:
   - {fileID: 473272223}
   - {fileID: 703509619}
   - {fileID: 769277957}
-  - {fileID: 1270327388}

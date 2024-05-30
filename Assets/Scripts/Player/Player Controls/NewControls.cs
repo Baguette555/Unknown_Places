@@ -63,20 +63,24 @@ public class NewControls : MonoBehaviour
 
         Scene currentScene = SceneManager.GetActiveScene();
         int sceneBuildIndex = currentScene.buildIndex;
-        // =================================================================================
-        // ============================================ CHECK IF PLAYER IS ABLE TO USE BOOTS
-        if (currentScene.buildIndex >= 9)
-        {
-            hasBoots = true;
-        }
+        // ================================================================================
         // ============================================ CHECK IF PLAYER IS ABLE TO USE DASH
-        if (currentScene.buildIndex >= 8)
+        if (currentScene.buildIndex >= 8)   // Unlocked by default after Intermission3.
         {
             isAbleToDash = true;
         }
         else
         {
             isAbleToDash = false;
+        }
+        // ============================================ CHECK IF PLAYER IS ABLE TO USE BOOTS
+        if (currentScene.buildIndex >= 12)  // Unlocked by default after Intermission5.
+        {
+            hasBoots = true;
+        }
+        else
+        {
+            hasBoots = false;
         }
         // =================================================================================
     }

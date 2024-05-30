@@ -6,25 +6,17 @@ using UnityEngine.UIElements;
 
 public class controllerOptions : MonoBehaviour
 {
-    [Header("Panels")]
     public GameObject Panel;    // Settings options
     bool visible = false;
 
-    [Header("Audio sources")]
     public AudioSource audiosource; // Global Music audio manager
     public AudioSource SFX; // SFX audio manager
 
-    [Header("Sliders")]
     public Slider SliderV;  // Slider for global volume
     public Slider SliderSFX;    // Slider for SFX volume
 
-    [Header("Toggles")]
     public Toggle fullScreenBox; // Toggle for the Fullscreen
 
-    [Header("Back Button")]
-    public GameObject backButton;
-
-    [Header("Texts for volume values")]
     public TMP_Text TxtVolume;
     public TMP_Text TxtSFX;
 
@@ -32,6 +24,13 @@ public class controllerOptions : MonoBehaviour
 
     private void Start()
     {
+        // The game is supposed to have 3 types of musics: tutorial, calm (in lodge), and dynamic (in game)
+        audiosource = GameObject.Find("tutorialMusic").GetComponent<AudioSource>();
+        audiosource = GameObject.Find("gameMusic").GetComponent<AudioSource>();
+        audiosource = GameObject.Find("LodgeMusic").GetComponent<AudioSource>();
+
+        SFX = GameObject.Find("SFXsounds").GetComponent<AudioSource>();
+
         SliderChange();
         SliderChangeSFX();
 
@@ -56,7 +55,6 @@ public class controllerOptions : MonoBehaviour
         visible = true;
         Panel.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
-        //EventSystem.current.SetSelectedGameObject(backButton);
     }
 
     public void RestoreOriginalFocus()
