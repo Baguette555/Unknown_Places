@@ -2301,15 +2301,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: (Porte)
+    name: (Door)
     sentences:
-    - "La porte est verouill\xE9e.."
+    - The door is locked...
     - ...
-    - "Une voix s'entend de l'autre c\xF4t\xE9..."
-    - '"Un record d''audiences ! On DOIT le garder."'
-    - "\"Le dernier ne nous a pas rapport\xE9 grand chose, profitons de celui-ci.\""
+    - A voice can be heard on the other side...
+    - "\u201CA new audience record! We MUST keep him.\u201D"
+    - "\u201CThe last one didn't do us much good, so let's make the most of this
+      one.\u201D"
     - ...
-    - "Les voix s'\xE9loignent."
+    - The voices fade away.
   dialogueManager: {fileID: 1027420478746922415}
   dialogueTrigger: {fileID: 467920695}
   dialogueUI: {fileID: 1941109339}

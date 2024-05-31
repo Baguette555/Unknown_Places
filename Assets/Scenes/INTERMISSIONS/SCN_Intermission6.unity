@@ -2389,11 +2389,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: (Porte)
+    name: (Door)
     sentences:
-    - La porte a l'air de mener vers les coulisses.
-    - "Si il y a un moyen de s'enfuir, c'est bien par l\xE0."
-    - "En esp\xE9rant qu'il y ait personne derri\xE8re..."
+    - The door seems to lead to the backstage area.
+    - If there's a way to escape, it's this way.
+    - Let's hope there's no one behind me...
   dialogueManager: {fileID: 1027420478746922415}
   dialogueTrigger: {fileID: 467920695}
   dialogueUI: {fileID: 1941109339}

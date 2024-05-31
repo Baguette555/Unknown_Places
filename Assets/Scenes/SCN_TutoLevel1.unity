@@ -120953,12 +120953,12 @@ PrefabInstance:
     - target: {fileID: 4643844839740093525, guid: d3234751d4d3fb34485666cd48f916b4,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: Je ne pense pas pouvoir passer pour l'instant.
+      value: I don't think I can get through at the moment.
       objectReference: {fileID: 0}
     - target: {fileID: 4643844839740093525, guid: d3234751d4d3fb34485666cd48f916b4,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: "Peut-\xEAtre qu'avec mes pouvoirs je pourrais passer au travers..."
+      value: Maybe with my powers I could get through...
       objectReference: {fileID: 0}
     - target: {fileID: 8051017916403902641, guid: d3234751d4d3fb34485666cd48f916b4,
         type: 3}

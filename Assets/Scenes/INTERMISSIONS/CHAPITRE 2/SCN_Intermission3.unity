@@ -117861,15 +117861,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: "Pr\xE9sentateur"
+    name: Game Host
     sentences:
-    - "Ah, je vois que tu te pr\xEAtes au jeu, \xE7a a l'air de bien se passer."
-    - "Je ne vais pas te laisser comme \xE7a pour la suite, les t\xE9l\xE9spectateurs
-      vont s'ennuyer."
-    - "Je vais te rendre un de tes pouvoirs, les prochaines salles seront pr\xE9vues
-      \xE0 cet effet."
-    - "On va mettre en place la prochaine sc\xE8ne, entra\xEEnes-toi donc dans la
-      salle derri\xE8re moi.."
+    - Ah, I see you're getting into the game, it seems to be going well.
+    - I'm not going to leave you like this for the rest of the show - viewers will
+      get bored.
+    - I'm going to give you back one of your powers, and the next rooms will be set
+      up for that purpose.
+    - We're going to set up the next scene, so why don't you practice in the room
+      behind me?
   dialogueManagerBoss: {fileID: 405995782}
   dialogueTriggerBoss: {fileID: 423148572}
   dialogueUI: {fileID: 1941109339}

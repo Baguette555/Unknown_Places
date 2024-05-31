@@ -2206,8 +2206,8 @@ MonoBehaviour:
   dialogue:
     name: Mike
     sentences:
-    - "La porte est verouill\xE9e."
-    - "Je dois s\xFBrement retourner sur sc\xE8ne."
+    - The door is locked.
+    - I've surely got to get back on stage.
   dialogueManager: {fileID: 405995780}
   dialogueTrigger: {fileID: 467920695}
   dialogueUI: {fileID: 1941109339}

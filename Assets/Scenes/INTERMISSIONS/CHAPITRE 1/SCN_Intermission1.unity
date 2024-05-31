@@ -3803,8 +3803,8 @@ MonoBehaviour:
   dialogue:
     name: Mike
     sentences:
-    - Je viens d'en sortir.
-    - "Je devrais aller sur sc\xE8ne."
+    - I just got out.
+    - I should go on stage.
   dialogueManager: {fileID: 405995780}
   dialogueTrigger: {fileID: 467920695}
   dialogueUI: {fileID: 1941109339}

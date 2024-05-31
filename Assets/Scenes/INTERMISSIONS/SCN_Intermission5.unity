@@ -117782,13 +117782,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: "Pr\xE9sentateur"
+    name: Game host
     sentences:
-    - Ah, la star du show est ici !
-    - "On va passer \xE0 une autre sc\xE8ne, donc je vais te rendre tes bottes."
-    - "On a aussi travaill\xE9 la salle d'entra\xEEnement derri\xE8re moi."
-    - "D\xE8s que tu te sens pr\xEAt retourne sur sc\xE8ne et le spectacle reprend
-      !"
+    - Ah, the star of the show is here!
+    - We'll move on to another scene, so I'll give you back your boots.
+    - We also worked on the training room behind me.
+    - As soon as you're ready, get back on stage and the show's back on!
   dialogueManagerBoss: {fileID: 405995782}
   dialogueTriggerBoss: {fileID: 423148572}
   dialogueUI: {fileID: 1941109339}
