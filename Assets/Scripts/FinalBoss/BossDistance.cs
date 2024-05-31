@@ -45,7 +45,7 @@ public class BossDistance : MonoBehaviour
         float distX = Mathf.Abs(playerX - bossX);
 
         int distInt = Mathf.RoundToInt(distX);
-        distanceText.text = "DISTANCE : " + (distInt - 6) + " m";
+        distanceText.text = "DISTANCE : " + (distInt - 4) + " m";
 
         float normalizedDistance = Mathf.Clamp01((distX - iconMinDistance) / (iconMaxDistance - iconMinDistance));
         float newIconPosX = Mathf.Lerp(minIconPosX, maxIconPosX, normalizedDistance);

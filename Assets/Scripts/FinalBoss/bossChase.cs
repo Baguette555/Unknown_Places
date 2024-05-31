@@ -41,4 +41,12 @@ public class bossChase : MonoBehaviour
             healthManager.playerHealth = 0;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            healthManager.playerHealth = 0;
+        }
+    }
 }

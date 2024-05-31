@@ -47,13 +47,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/INTERMISSIONS/SCN_Intermission6.unity
     guid: de42048c212cdde40aad401abeb1be12
-  - enabled: 0
-    path: Assets/Scenes/Prototype Levels/TerrainJeuAlpha1.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
-    path: Assets/Scenes/Prototype Levels/SCN_TestBottes.unity
-    guid: 8e400beb9a2f8664b86701b4576ce247
   - enabled: 1
     path: Assets/Scenes/SCN_CoursePoursuite.unity
     guid: aa044b92e00026344aa3e447ed8a30d6
+  - enabled: 1
+    path: Assets/Scenes/SCN_Credits.unity
+    guid: 1f3a79dffa468144f978b822aa26874a
   m_configObjects: {}

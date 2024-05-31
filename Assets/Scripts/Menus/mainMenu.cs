@@ -18,8 +18,7 @@ public class mainMenu : MonoBehaviour
 
     public void Credits()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 14);  // buildIndex 15 = Crédits
-        Debug.Log("Démarrer scène crédits");
+        SceneManager.LoadScene("SCN_Credits");  // buildIndex 15 = Crédits // 0 = Main Menu
     }
 
     IEnumerator LoadLevel(int levelIndex)
