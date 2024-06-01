@@ -49,85 +49,85 @@ public class PauseMenu : MonoBehaviour
         // ================================================== Sorted by level appereance in game.
         if (sceneName == "SCN_TutoLevel1")
         {
-            levelText.text = "Chapitre 0 - Introduction";   // The text that will be shown in the Pause Menu.
+            levelText.text = "Chapter 0 - Introduction";   // The text that will be shown in the Pause Menu.
             levelTxt = "d'introduction";                    // Will be shown in Discord in this form: "Niveau (levelTxt)"
             chapterInt = 0;                                 // Will be shown in Discord in this form: "Chapitre (chapterInt)"
         }
         else if (sceneName == "SCN_Intermission1") // SCN_Intermission[NuméroX]
         {
-            levelText.text = "Chapitre 1 - Avant-Jeu";
+            levelText.text = "Chapter 1 - Pre-game";
             levelTxt = "d'intermission 1";
             chapterInt = 1;
         }
         else if (sceneName == "SCN_C01_L01")    // SCN_C[Chapitre0X]_L[Niveau0X]
         {
-            levelText.text = "Chapitre 1 - Niveau 1";
+            levelText.text = "Chapter 1 - Level 1";
             levelTxt = "1";
             chapterInt = 1;
         }
         else if (sceneName == "SCN_Intermission2")
         {
-            levelText.text = "Chapitre 1 - Intermission 2";
+            levelText.text = "Chapter 1 - Intermission 2";
             levelTxt = "d'intermission 2";
             chapterInt = 1;
         }
         else if (sceneName == "SCN_C01_L02")
         {
-            levelText.text = "Chapitre 1 - Niveau 2";
+            levelText.text = "Chapter 1 - Level 2";
             levelTxt = "2";
             chapterInt = 1;
         }
         else if (sceneName == "SCN_Intermission3")
         {
-            levelText.text = "Chapitre 2 - Intermission 1";
+            levelText.text = "Chapter 2 - Intermission 1";
             levelTxt = "d'intermission 3";
             chapterInt = 2;
         }
         else if (sceneName == "SCN_C02_L01")
         {
-            levelText.text = "Chapitre 2 - Niveau 1";
+            levelText.text = "Chapter 2 - Level 1";
             levelTxt = "1";
             chapterInt = 2;
         }
         else if (sceneName == "SCN_Intermission4")
         {
-            levelText.text = "Chapitre 2 - Intermission 2";
+            levelText.text = "Chapter 2 - Intermission 2";
             levelTxt = "d'intermission 4";
             chapterInt = 2;
         }
         else if (sceneName == "SCN_C02_L02")
         {
-            levelText.text = "Chapitre 2 - Niveau 2";
+            levelText.text = "Chapter 2 - Level 2";
             levelTxt = "2";
             chapterInt = 2;
         }
         else if (sceneName == "SCN_Intermission5")
         {
-            levelText.text = "Chapitre 2 - Intermission 2";
+            levelText.text = "Chapter 2 - Intermission 2";
             levelTxt = "d'intermission 5";
             chapterInt = 2;
         }
         else if (sceneName == "SCN_C03_L01")
         {
-            levelText.text = "Chapitre 3 - Niveau 1";
+            levelText.text = "Chapter 3 - Level 1";
             levelTxt = "1";
             chapterInt = 3;
         }
         else if (sceneName == "SCN_Intermission6")
         {
-            levelText.text = "Chapitre 3 - Intermission 1";
+            levelText.text = "Chapter 3 - Intermission 1";
             levelTxt = "d'intermission 6";
             chapterInt = 3;
         }
         else if (sceneName == "SCN_C04_L01")
         {
-            levelText.text = "Chapitre 4 - Backstage";
+            levelText.text = "Chapter 4 - Backstage";
             levelTxt = "1";
             chapterInt = 4;
         }
         else if (sceneName == "SCN_CoursePoursuite")
         {
-            levelText.text = "Chapitre 4 - Couloir";
+            levelText.text = "Chapter 4 - Corridor";
             levelTxt = "Run!";
             chapterInt = 4;
         }
