@@ -2233,18 +2233,6 @@ MonoBehaviour:
     m_ActionName: Player/Dash[/Keyboard/shift]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 4dab794d-657f-4458-9c27-6fd9da113020
-    m_ActionName: UI (Debug)/GainHealth[/Keyboard/i]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 20399d77-ac96-4c30-ba94-9aa3f12f478b
-    m_ActionName: UI (Debug)/LoseHealth[/Keyboard/o]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 284199aa-bd0d-4d1f-97ef-51f4a0d97d12
-    m_ActionName: LevelLoaderDebug/ChangeLevel[/Keyboard/p]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: fd45fc9c-3069-4d73-873d-ed3e0182b866
     m_ActionName: Pause/Pause[/Keyboard/escape]
   - m_PersistentCalls:
@@ -3026,18 +3014,6 @@ MonoBehaviour:
     m_ActionName: Player/Dash[/Keyboard/shift]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 4dab794d-657f-4458-9c27-6fd9da113020
-    m_ActionName: UI (Debug)/GainHealth[/Keyboard/i]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 20399d77-ac96-4c30-ba94-9aa3f12f478b
-    m_ActionName: UI (Debug)/LoseHealth[/Keyboard/o]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 284199aa-bd0d-4d1f-97ef-51f4a0d97d12
-    m_ActionName: LevelLoaderDebug/ChangeLevel[/Keyboard/p]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: fd45fc9c-3069-4d73-873d-ed3e0182b866
     m_ActionName: Pause/Pause[/Keyboard/escape]
   - m_PersistentCalls:
@@ -3139,10 +3115,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: (Porte)
+    name: (Door)
     sentences:
-    - "Du vent s'entend derri\xE8re la porte."
-    - Un courant d'air probablement.
+    - Wind can be heard behind the door.
+    - Probably a draught.
   dialogueManager: {fileID: 1847785666}
   dialogueTrigger: {fileID: 740320435}
   dialogueUI: {fileID: 1941109339}
