@@ -45,7 +45,7 @@ public class dashCooldownImage : MonoBehaviour
             yield return null;
         }
         dashReady = true;
-        text.text = "PRET";
+        text.text = "READY";
         yield return new WaitForSeconds(0.175f);    // Wait for the user to see that the dash is ready and can be used again
         for (float i = 1; i >= 0; i -= (Time.deltaTime)*5)
         {
