@@ -119583,6 +119583,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: electricWall
       objectReference: {fileID: 0}
+    - target: {fileID: 6711250807875192529, guid: 4add3daba0c5263458e3c4a62234a647,
+        type: 3}
+      propertyPath: bounce
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -122647,6 +122652,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: electricWall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711250807875192529, guid: 4add3daba0c5263458e3c4a62234a647,
+        type: 3}
+      propertyPath: bounce
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
